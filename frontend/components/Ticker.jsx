@@ -2,6 +2,7 @@ const items = [
   'Dies & Press Tools', 'Injection Moulds', 'FRP / GRP Fabrication',
   'CNC Precision Machining', 'Jigs & Fixtures', 'Sheet Metal Work',
   'Composite Structures', 'Reverse Engineering',
+  'Automotive Super Structure Body Design & Manufacturing',
 ];
 
 export default function Ticker() {

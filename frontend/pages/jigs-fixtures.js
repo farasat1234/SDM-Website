@@ -1,4 +1,4 @@
-﻿import Head from 'next/head';
+import Head from 'next/head';
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -44,9 +44,9 @@ export default function JigsFixtures() {
   return (
     <>
       <Head>
-        <title>Jigs & Fixtures â€” System Dies & Mould | Karachi</title>
+        <title>Jigs &amp; Fixtures - System Dies &amp; Mould | Karachi</title>
         <meta name="description" content="Precision jigs, fixtures, checking gauges, and drilling templates engineered to reduce cycle times and guarantee assembly repeatability on the production floor." />
-        <link rel="icon" href="/SDM_Logo2.jpeg" />
+        <link rel="icon" href="/SDM-LOGO-white.jpg" />
       </Head>
       <Navbar />
 
@@ -54,14 +54,15 @@ export default function JigsFixtures() {
       <div className="jigs-hero">
         <div className="jigs-hero-overlay" />
         <div className="jigs-hero-content">
-          <Link href="/#services" className="dies-back">â† Back to Services</Link>
-          <div className="section-tag" style={{ marginTop: '16px' }}>Production Tooling</div>
+          <Link href="/#services" className="dies-back"> Back to Services</Link>
+          <div className="section-tag" style={{ marginTop: '0' }}>Production Tooling</div>
           <h1>Jigs &amp; Fixtures</h1>
           <p>Precision tooling solutions engineered to improve production efficiency, ensure dimensional accuracy, and maintain repeatable quality across high-volume manufacturing operations.</p>
         </div>
       </div>
 
       <div className="dies-page">
+
 
         {/* Intro */}
         <section className="dies-intro">
@@ -104,7 +105,7 @@ export default function JigsFixtures() {
             <div className="dies-quality-grid">
               {benefits.map((b) => (
                 <div key={b} className="dies-quality-item">
-                  <span className="dies-check">âœ“</span>
+                  <span className="dies-check">&#10003;</span>
                   <span>{b}</span>
                 </div>
               ))}
@@ -143,9 +144,9 @@ export default function JigsFixtures() {
         {/* CTA */}
         <section className="dies-cta">
           <h2>Need Custom Jigs or Fixtures?</h2>
-          <p>Share your production requirements or drawings â€” our engineering team will develop an efficient tooling solution and respond with a quotation within 24 hours.</p>
+          <p>Share your production requirements or drawings — our engineering team will develop an efficient tooling solution and respond with a quotation within 24 hours.</p>
           <Link href="/#contact" style={{ display: 'inline-block', background: 'var(--navy)', color: '#fff', padding: '14px 36px', borderRadius: '6px', fontWeight: 700, textDecoration: 'none', fontSize: '0.88rem', letterSpacing: '0.5px', textTransform: 'uppercase' }}>
-            Request a Quote â†’
+            Request a Quote &#8594;
           </Link>
         </section>
 
@@ -154,4 +155,3 @@ export default function JigsFixtures() {
     </>
   );
 }
-

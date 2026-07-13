@@ -1,15 +1,25 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 export default function PharmaFoodProcessing() {
+  const router = useRouter();
+  function goToFacilities() {
+    router.push('/').then(() => {
+      setTimeout(() => {
+        const el = document.getElementById('facilities');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    });
+  }
   return (
     <>
       <Head>
         <title>Pharma & Food Processing — System Dies & Mould | Karachi</title>
         <meta name="description" content="Cleanroom-grade manufacturing environment for pharmaceutical and food industry production with contamination-controlled processes and strict quality protocols." />
-        <link rel="icon" href="/SDM_Logo2.jpeg" />
+        <link rel="icon" href="/SDM-LOGO-white.jpg" />
       </Head>
       <Navbar />
 
@@ -17,8 +27,8 @@ export default function PharmaFoodProcessing() {
       <div style={{ position: 'relative', minHeight: '420px', display: 'flex', alignItems: 'flex-end', padding: '120px 5% 64px', backgroundImage: 'url(/injection-mould.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(15,42,94,0.88) 0%, rgba(30,144,255,0.55) 60%, rgba(15,42,94,0.75) 100%)' }} />
         <div style={{ position: 'relative', zIndex: 2, maxWidth: '700px' }}>
-          <Link href="/#facilities" className="dies-back">← Back to Facilities</Link>
-          <div className="section-tag" style={{ marginTop: '16px' }}>Pharma &amp; Food Processing</div>
+          <button onClick={goToFacilities} className="dies-back"> Back to Facilities</button>
+          <div className="section-tag" style={{ marginTop: '0' }}>Pharma &amp; Food Processing</div>
           <h1 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 'clamp(2.8rem, 6vw, 5rem)', lineHeight: 1, letterSpacing: '2px', color: '#fff', margin: '12px 0 20px' }}>Cleanroom-Grade Manufacturing Environment</h1>
           <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1rem', lineHeight: 1.8, maxWidth: '560px' }}>Dedicated hygienic processing facility meeting pharmaceutical and food industry standards — contamination-controlled, compliant, and precision-focused.</p>
         </div>
@@ -32,8 +42,8 @@ export default function PharmaFoodProcessing() {
             <div>
               <h2>Cleanroom-Grade Manufacturing Environment</h2>
               <p>Our dedicated hygienic processing area is designed to meet pharmaceutical and food industry standards with contamination-controlled environments and strict quality protocols.</p>
-              <p style={{ marginTop: '16px' }}>Equipped with stainless-compatible tooling and rigorous contamination-prevention procedures, the facility ensures safe, compliant, and high-quality production for sensitive applications.</p>
-              <p style={{ marginTop: '16px' }}>From pharma-grade plastic components to food-safe containers and packaging, our cleanroom facility delivers the precision and hygiene that regulated industries demand.</p>
+              <p style={{ marginTop: '0' }}>Equipped with stainless-compatible tooling and rigorous contamination-prevention procedures, the facility ensures safe, compliant, and high-quality production for sensitive applications.</p>
+              <p style={{ marginTop: '0' }}>From pharma-grade plastic components to food-safe containers and packaging, our cleanroom facility delivers the precision and hygiene that regulated industries demand.</p>
             </div>
             <div className="dies-intro-img">
               <img src="/injection-mould.jpg" alt="Pharma Food Processing Facility" />

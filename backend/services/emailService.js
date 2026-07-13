@@ -22,8 +22,8 @@ transporter.verify((err) => {
 });
 
 async function sendContactEmail(data) {
-  const { name, company, email, phone, service, details } = data;
-  await transporter.sendMail({
+  const { name, company, email, phone, service, details, attachment } = data;
+  const mailOptions = {
     from: `"SDM Website" <${process.env.SMTP_USER}>`,
     to: process.env.FEEDBACK_EMAIL,
     replyTo: email,
@@ -45,13 +45,18 @@ async function sendContactEmail(data) {
             <strong style="color:#666;">Project Details:</strong>
             <p style="color:#333;margin:8px 0 0;">${details || '—'}</p>
           </div>
+          ${attachment ? `<p style="margin-top:16px;color:#666;font-size:13px;">📎 Attachment: <strong>${attachment.originalname}</strong></p>` : ''}
         </div>
         <div style="background:#0f1829;padding:14px;text-align:center;">
           <p style="color:#888;font-size:12px;margin:0;">System Dies and Mould | C-47, SITE, Super Highway, Karachi</p>
         </div>
       </div>
     `,
-  });
+  };
+  if (attachment) {
+    mailOptions.attachments = [{ filename: attachment.originalname, content: attachment.buffer }];
+  }
+  await transporter.sendMail(mailOptions);
 }
 
 async function sendChatSummaryEmail(userMessage, botReply, visitorInfo) {

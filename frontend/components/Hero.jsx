@@ -3,7 +3,7 @@ export default function Hero() {
     <section className="hero">
       <div className="hero-grid"></div>
       <div className="hero-content">
-        <span className="hero-tag">ISO 9001:2015 Certified Engineering</span>
+
         <h1>Dies. Moulds.<br /><em>FRP.</em> Built<br />Precise.</h1>
         <p>
           Delivering high-performance tooling, composite structures, and precision-engineered
@@ -21,11 +21,11 @@ export default function Hero() {
           <div className="stat-label">Years Experience</div>
         </div>
         <div className="stat">
-          <div className="stat-num">1200+</div>
+          <div className="stat-num">1000+</div>
           <div className="stat-label">Projects Delivered</div>
         </div>
         <div className="stat">
-          <div className="stat-num">90%</div>
+          <div className="stat-num">80%</div>
           <div className="stat-label">Client Retention</div>
         </div>
       </div>

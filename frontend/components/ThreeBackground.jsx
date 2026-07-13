@@ -68,14 +68,14 @@ export default function ThreeBackground() {
     const gears = [];
 
     const gearConfigs = [
-      { teeth: 16, outerR: 3.2, innerR: 1.2, toothH: 0.5, depth: 0.6, mat: navyMat,   pos: [-12,  6, -8],  speed: 0.008 },
-      { teeth: 10, outerR: 2.0, innerR: 0.8, toothH: 0.35, depth: 0.5, mat: accentMat, pos: [ -7,  6, -6],  speed: -0.013 },
-      { teeth: 20, outerR: 4.2, innerR: 1.8, toothH: 0.6, depth: 0.7, mat: goldMat,   pos: [ 12, -5, -10], speed: 0.006 },
-      { teeth: 12, outerR: 2.5, innerR: 1.0, toothH: 0.4, depth: 0.5, mat: navyMat,   pos: [  8, -5, -7],  speed: -0.010 },
-      { teeth: 8,  outerR: 1.6, innerR: 0.6, toothH: 0.3, depth: 0.4, mat: accentMat, pos: [ 10,  2, -5],  speed: 0.015 },
+      { teeth: 16, outerR: 3.2, innerR: 1.2, toothH: 0.5, depth: 0.6, mat: navyMat,   pos: [ -6,  6, -8],  speed: 0.008 },
+      { teeth: 10, outerR: 2.0, innerR: 0.8, toothH: 0.35, depth: 0.5, mat: accentMat, pos: [  4,  5, -6],  speed: -0.013 },
+      { teeth: 20, outerR: 4.2, innerR: 1.8, toothH: 0.6, depth: 0.7, mat: goldMat,   pos: [  8, -4, -10], speed: 0.006 },
+      { teeth: 12, outerR: 2.5, innerR: 1.0, toothH: 0.4, depth: 0.5, mat: navyMat,   pos: [ -4, -6, -7],  speed: -0.010 },
+      { teeth: 8,  outerR: 1.6, innerR: 0.6, toothH: 0.3, depth: 0.4, mat: accentMat, pos: [  6,  2, -5],  speed: 0.015 },
       { teeth: 14, outerR: 3.0, innerR: 1.1, toothH: 0.45, depth: 0.6, mat: wireMat,  pos: [  0, -8, -12], speed: 0.005 },
-      { teeth: 18, outerR: 3.8, innerR: 1.5, toothH: 0.55, depth: 0.65, mat: goldMat, pos: [-10, -4, -9],  speed: -0.007 },
-      { teeth: 6,  outerR: 1.2, innerR: 0.4, toothH: 0.25, depth: 0.35, mat: navyMat, pos: [  4,  8, -4],  speed: 0.020 },
+      { teeth: 18, outerR: 3.8, innerR: 1.5, toothH: 0.55, depth: 0.65, mat: goldMat, pos: [ -8, -3, -9],  speed: -0.007 },
+      { teeth: 6,  outerR: 1.2, innerR: 0.4, toothH: 0.25, depth: 0.35, mat: navyMat, pos: [  2,  8, -4],  speed: 0.020 },
     ];
 
     gearConfigs.forEach(cfg => {
@@ -99,7 +99,7 @@ export default function ThreeBackground() {
       const group = new THREE.Group();
       group.add(bolt); group.add(head);
       group.position.set(
-        (Math.random() - 0.5) * 40,
+        (Math.random() - 0.5) * 30,
         (Math.random() - 0.5) * 24,
         (Math.random() - 0.5) * 10 - 5
       );
@@ -129,7 +129,7 @@ export default function ThreeBackground() {
     for (let i = 0; i < 18; i++) {
       const nut = new THREE.Mesh(nutGeo, i % 2 === 0 ? accentMat : navyMat);
       nut.position.set(
-        (Math.random() - 0.5) * 44,
+        (Math.random() - 0.5) * 34,
         (Math.random() - 0.5) * 26,
         (Math.random() - 0.5) * 8 - 4
       );
@@ -212,7 +212,7 @@ export default function ThreeBackground() {
     <div
       ref={mountRef}
       style={{
-        position: 'fixed',
+        position: 'absolute',
         top: 0, left: 0,
         width: '100%', height: '100%',
         zIndex: 0,

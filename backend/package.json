@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "sdm-backend",
   "version": "1.0.0",
   "description": "SDM Backend API",
@@ -12,6 +12,7 @@
     "cors": "*",
     "dotenv": "*",
     "express": "*",
+    "multer": "^2.2.0",
     "nodemailer": "*"
   },
   "devDependencies": {

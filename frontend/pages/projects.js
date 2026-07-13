@@ -27,7 +27,7 @@ const projects = [
     tag: 'Precision Machining',
     icon: '⚙️',
     title: 'Turbine Housing — Inconel 718',
-    desc: '5-axis mill-turn, tight bore tolerances for aerospace-grade turbine assembly.',
+    desc: '4-axis mill-turn, tight bore tolerances for aerospace-grade turbine assembly.',
   },
   {
     tag: 'Jigs & Fixtures',
@@ -45,7 +45,7 @@ const projects = [
     tag: 'CNC Machining',
     icon: '⚙️',
     title: 'Hydraulic Manifold Block',
-    desc: 'Complex multi-port hydraulic manifold in EN24T, 5-axis CNC with cross-drilled galleries to ±0.008mm.',
+    desc: 'Complex multi-port hydraulic manifold in EN24T, 4-axis CNC with cross-drilled galleries to ±0.008mm.',
   },
   {
     tag: 'FRP Fabrication',
@@ -85,15 +85,15 @@ export default function AllProjects() {
       <Head>
         <title>Projects — System Dies & Mould | Karachi</title>
         <meta name="description" content="Browse our portfolio of tooling, fabrication, and precision machining projects delivered across automotive, industrial, and infrastructure sectors." />
-        <link rel="icon" href="/SDM_Logo2.jpeg" />
+        <link rel="icon" href="/SDM-LOGO-white.jpg" />
       </Head>
       <Navbar />
 
       <div className="proj-page-hero">
         <div className="proj-page-hero-overlay" />
         <div className="proj-page-hero-content">
-          <Link href="/" className="dies-back">← Back to Home</Link>
-          <div className="section-tag" style={{ marginTop: '16px' }}>Our Work</div>
+          <Link href="/" className="dies-back"> Back to Home</Link>
+          <div className="section-tag" style={{ marginTop: '0' }}>Our Work</div>
           <h1>Project Portfolio</h1>
           <p>A cross-section of tooling, fabrication, and precision machining projects delivered for automotive OEMs, industrial manufacturers, and infrastructure developers across Pakistan.</p>
         </div>

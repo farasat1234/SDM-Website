@@ -9,14 +9,14 @@ export default function Facilities() {
       <div className="section-tag">Manufacturing Facilities</div>
       <h2 className="section-title">Installed Facilities &amp;<br />Production Lines</h2>
       <p className="section-sub">
-        Five dedicated production facilities under one roof — from high-tonnage vertical injection to
+        Five dedicated production facilities under one roof from high-tonnage vertical injection to
         sterile-grade processing lines for pharma and food sectors.
       </p>
 
       <div className="projects-grid fac-projects-grid">
 
         {/* Card 1 — Featured */}
-        <div className="project-card featured">
+        <div className="project-card featured fac-wm" style={{ '--fac-wm': 'url(/injection.jpg)', isolation: 'isolate' }}>
           <span className="bg-icon">🏭</span>
           <div className="project-tag">High Volume</div>
           <h3>Injection Moulding Facility</h3>
@@ -37,7 +37,7 @@ export default function Facilities() {
         </div>
 
         {/* Card 2 */}
-        <div className="project-card" style={{ display: 'flex', flexDirection: 'column' }}>
+        <div className="project-card fac-wm" style={{ display: 'flex', flexDirection: 'column', '--fac-wm': 'url(/injection-mould.jpg)' }}>
           <span className="bg-icon">🍼</span>
           <div className="project-tag">Bottle Production</div>
           <h3>Advanced Blowing Facility</h3>
@@ -48,7 +48,7 @@ export default function Facilities() {
         </div>
 
         {/* Card 3 */}
-        <div className="project-card" style={{ display: 'flex', flexDirection: 'column' }}>
+        <div className="project-card fac-wm" style={{ display: 'flex', flexDirection: 'column', '--fac-wm': 'url(/frp.jpeg)' }}>
           <span className="bg-icon">🧱</span>
           <div className="project-tag">FRP Fabrication</div>
           <h3>Advanced Composite Manufacturing</h3>
@@ -59,7 +59,7 @@ export default function Facilities() {
         </div>
 
         {/* Card 4 */}
-        <div className="project-card" style={{ borderTop: 'none', display: 'flex', flexDirection: 'column' }}>
+        <div className="project-card fac-wm" style={{ borderTop: 'none', display: 'flex', flexDirection: 'column', '--fac-wm': 'url(/automotive-tooling.jpg)' }}>
           <span className="bg-icon">🔧</span>
           <div className="project-tag">Advanced Pressing</div>
           <h3>Precision Forming &amp; High-Output Production</h3>
@@ -70,7 +70,7 @@ export default function Facilities() {
         </div>
 
         {/* Card 5 */}
-        <div className="project-card" style={{ borderTop: 'none', display: 'flex', flexDirection: 'column' }}>
+        <div className="project-card fac-wm" style={{ borderTop: 'none', display: 'flex', flexDirection: 'column', '--fac-wm': 'url(/injection-3.jpeg)' }}>
           <span className="bg-icon">🧬</span>
           <div className="project-tag">Pharma &amp; Food Processing</div>
           <h3>Cleanroom Manufacturing Environment</h3>

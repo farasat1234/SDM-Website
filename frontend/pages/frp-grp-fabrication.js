@@ -21,8 +21,8 @@ export default function FrpGrpFabrication() {
     <>
       <Head>
         <title>FRP / GRP Fabrication - System Dies &amp; Mould | Karachi</title>
-        <meta name="description" content="Fiberglass reinforced plastic components - tanks, vessels, hoods, canopies, ducts, and custom profiles using hand lay-up, spray-up, and RTM processes." />
-        <link rel="icon" href="/SDM_Logo2.jpeg" />
+        <meta name="description" content="Fiberglass reinforced plastic components — tanks, vessels, hoods, canopies, ducts, and custom profiles using hand lay-up, spray-up and could moulding." />
+        <link rel="icon" href="/SDM-LOGO-white.jpg" />
       </Head>
       <Navbar />
 
@@ -30,10 +30,10 @@ export default function FrpGrpFabrication() {
       <div className="frp-hero">
         <div className="frp-hero-overlay" />
         <div className="frp-hero-content">
-          <Link href="/#services" className="dies-back">&larr; Back to Services</Link>
-          <div className="section-tag" style={{ marginTop: '16px' }}>Composite Solutions</div>
+          <Link href="/#services" className="dies-back"> Back to Services</Link>
+          <div className="section-tag" style={{ marginTop: '0' }}>Composite Solutions</div>
           <h1>FRP / GRP Fabrication</h1>
-          <p>Fiberglass reinforced plastic components - tanks, vessels, hoods, canopies, ducts, and custom profiles using hand lay-up, spray-up, and RTM processes.</p>
+          <p>Fiberglass reinforced plastic components — tanks, vessels, hoods, canopies, ducts, and custom profiles using hand lay-up, spray-up and could moulding.</p>
         </div>
       </div>
 
@@ -45,8 +45,8 @@ export default function FrpGrpFabrication() {
             <div>
               <h2>Advanced Composite Fabrication</h2>
               <p>System Dies &amp; Mould operates a dedicated FRP / GRP fabrication shop delivering high-quality fiberglass reinforced plastic components for industrial, automotive, infrastructure, and marine applications.</p>
-              <p style={{ marginTop: '16px' }}>Our in-house composite team combines skilled craftsmanship with proven manufacturing processes hand lay-up, spray-up, and resin transfer moulding to produce components that are lightweight, corrosion-resistant, and structurally strong.</p>
-              <p style={{ marginTop: '16px' }}>From one-off custom prototypes to high-volume production runs, we deliver consistent quality with full dimensional inspection on every component.</p>
+              <p style={{ marginTop: '0' }}>Our in-house composite team combines skilled craftsmanship with proven manufacturing processes hand lay-up, spray-up, and resin transfer moulding to produce components that are lightweight, corrosion-resistant, and structurally strong.</p>
+              <p style={{ marginTop: '0' }}>From one-off custom prototypes to high-volume production runs, we deliver consistent quality with full dimensional inspection on every component.</p>
             </div>
             <div className="dies-intro-img">
               <img src="/frp.jpeg" alt="FRP GRP fiberglass fabrication" />

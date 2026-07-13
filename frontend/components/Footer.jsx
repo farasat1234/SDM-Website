@@ -1,10 +1,11 @@
-﻿export default function Footer() {
+export default function Footer() {
   return (
     <footer>
       <div className="footer-top">
         <div className="footer-brand">
           <div className="footer-logo">
-            <img src="/SDM_Logo2.jpeg" alt="SDM System Dies and Mould" />
+            <img src="/SDM-LOGO-white.jpg" alt="SDM System Dies and Mould" />
+            <span className="footer-logo-text">System Dies and Moulds</span>
           </div>
           <p>Full-service mechanical engineering firm specialising in dies, moulds, FRP fabrication, and precision machining for industrial and automotive clients across Pakistan and the Gulf region.</p>
         </div>
@@ -41,10 +42,9 @@
         </div>
       </div>
       <div className="footer-bottom">
-        <p>Â© 2026 System Dies and Mould (SDM). All rights reserved. | C-47, SITE, Super Highway, Karachi</p>
-        <p>Made with <span>â– </span> in Karachi, Pakistan</p>
+        <p>&#169; 2026 System Dies and Mould (SDM). All rights reserved. | C-47, SITE, Super Highway, Karachi</p>
+        <p>Made with <span>&#9632;</span> in Karachi, Pakistan</p>
       </div>
     </footer>
   );
 }
-

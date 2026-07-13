@@ -1,15 +1,25 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 export default function BottleProduction() {
+  const router = useRouter();
+  function goToFacilities() {
+    router.push('/').then(() => {
+      setTimeout(() => {
+        const el = document.getElementById('facilities');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    });
+  }
   return (
     <>
       <Head>
         <title>Bottle Production — System Dies & Mould | Karachi</title>
         <meta name="description" content="Advanced ASB Automatic Stretch Blow and IBM Injection Blow Moulding facility for high-quality bottle manufacturing including pharma-grade containers." />
-        <link rel="icon" href="/SDM_Logo2.jpeg" />
+        <link rel="icon" href="/SDM-LOGO-white.jpg" />
       </Head>
       <Navbar />
 
@@ -17,8 +27,8 @@ export default function BottleProduction() {
       <div style={{ position: 'relative', minHeight: '420px', display: 'flex', alignItems: 'flex-end', padding: '120px 5% 64px', backgroundImage: 'url(/injection3.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(15,42,94,0.88) 0%, rgba(30,144,255,0.55) 60%, rgba(15,42,94,0.75) 100%)' }} />
         <div style={{ position: 'relative', zIndex: 2, maxWidth: '700px' }}>
-          <Link href="/#facilities" className="dies-back">← Back to Facilities</Link>
-          <div className="section-tag" style={{ marginTop: '16px' }}>Bottle Production</div>
+          <button onClick={goToFacilities} className="dies-back"> Back to Facilities</button>
+          <div className="section-tag" style={{ marginTop: '0' }}>Bottle Production</div>
           <h1 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 'clamp(2.8rem, 6vw, 5rem)', lineHeight: 1, letterSpacing: '2px', color: '#fff', margin: '12px 0 20px' }}>Advanced Blowing Facility</h1>
           <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1rem', lineHeight: 1.8, maxWidth: '560px' }}>Precision bottle manufacturing using ASB Automatic Stretch Blow and IBM Injection Blow Moulding technology — high-quality containers for pharma, food, and industrial sectors.</p>
         </div>
@@ -32,8 +42,8 @@ export default function BottleProduction() {
             <div>
               <h2>Precision Bottle Manufacturing</h2>
               <p>Our Advanced Blowing Facility is equipped with modern ASB Automatic Stretch Blow and IBM Injection Blow Moulding technology for precision bottle manufacturing.</p>
-              <p style={{ marginTop: '16px' }}>We produce high-quality containers, including pharma-grade bottles, with consistent dimensional accuracy, superior finish, and reliable high-volume production capabilities.</p>
-              <p style={{ marginTop: '16px' }}>From small-batch specialty containers to large-scale production runs, our facility is designed to meet the strictest quality and compliance requirements across industries.</p>
+              <p style={{ marginTop: '0' }}>We produce high-quality containers, including pharma-grade bottles, with consistent dimensional accuracy, superior finish, and reliable high-volume production capabilities.</p>
+              <p style={{ marginTop: '0' }}>From small-batch specialty containers to large-scale production runs, our facility is designed to meet the strictest quality and compliance requirements across industries.</p>
             </div>
             <div className="dies-intro-img">
               <img src="/injection3.jpg" alt="Bottle Production Facility" />

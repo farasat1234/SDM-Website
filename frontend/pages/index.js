@@ -13,11 +13,16 @@ import Clients from '../components/Clients';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import ChatBot from '../components/ChatBot';
-import dynamic from 'next/dynamic';
-const ThreeBackground = dynamic(() => import('../components/ThreeBackground'), { ssr: false });
 import { useEffect } from 'react';
 
 export default function Home() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    if (window.location.hash) {
+      history.replaceState(null, '', window.location.pathname);
+    }
+  }, []);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -42,13 +47,11 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>SDM â€“ System Dies &amp; Mould | Karachi, Pakistan</title>
-        <meta name="description" content="System Dies and Mould (SDM) â€” ISO 9001:2015 certified manufacturer of dies, press tools, injection moulds, FRP fabrication, and CNC precision machining. Based in Karachi, Pakistan." />
+        <title>SDM - System Dies &amp; Mould | Karachi, Pakistan</title>
+        <meta name="description" content="System Dies and Mould (SDM) - ISO 9001:2015 certified manufacturer of dies, press tools, injection moulds, FRP fabrication, and CNC precision machining. Based in Karachi, Pakistan." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/SDM_Logo2.jpeg" />
+        <link rel="icon" href="/SDM-LOGO-white.jpg" />
       </Head>
-      <ThreeBackground />
-      <div style={{ position: 'relative', zIndex: 1 }}>
       <Navbar />
       <Hero />
       <Ticker />
@@ -63,7 +66,6 @@ export default function Home() {
       <Contact />
       <Footer />
       <ChatBot />
-      </div>
     </>
   );
 }

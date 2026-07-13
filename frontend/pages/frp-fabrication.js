@@ -1,15 +1,25 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 export default function FrpFabrication() {
+  const router = useRouter();
+  function goToFacilities() {
+    router.push('/').then(() => {
+      setTimeout(() => {
+        const el = document.getElementById('facilities');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    });
+  }
   return (
     <>
       <Head>
         <title>FRP Fabrication — System Dies & Mould | Karachi</title>
         <meta name="description" content="Advanced FRP fabrication using cold moulding, wood & metal encapsulation, and hydraulic press finishing for durable composite components." />
-        <link rel="icon" href="/SDM_Logo2.jpeg" />
+        <link rel="icon" href="/SDM-LOGO-white.jpg" />
       </Head>
       <Navbar />
 
@@ -17,8 +27,8 @@ export default function FrpFabrication() {
       <div style={{ position: 'relative', minHeight: '420px', display: 'flex', alignItems: 'flex-end', padding: '120px 5% 64px', backgroundImage: 'url(/frp.jpeg)', backgroundSize: 'cover', backgroundPosition: 'center', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(15,42,94,0.88) 0%, rgba(30,144,255,0.55) 60%, rgba(15,42,94,0.75) 100%)' }} />
         <div style={{ position: 'relative', zIndex: 2, maxWidth: '700px' }}>
-          <Link href="/#facilities" className="dies-back">← Back to Facilities</Link>
-          <div className="section-tag" style={{ marginTop: '16px' }}>FRP Fabrication</div>
+          <button onClick={goToFacilities} className="dies-back"> Back to Facilities</button>
+          <div className="section-tag" style={{ marginTop: '0' }}>FRP Fabrication</div>
           <h1 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 'clamp(2.8rem, 6vw, 5rem)', lineHeight: 1, letterSpacing: '2px', color: '#fff', margin: '12px 0 20px' }}>Advanced Composite Manufacturing</h1>
           <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1rem', lineHeight: 1.8, maxWidth: '560px' }}>Specializing in FRP fabrication using cold moulding, encapsulation, and hydraulic press finishing for durable, lightweight, high-strength composite components.</p>
         </div>
@@ -32,8 +42,8 @@ export default function FrpFabrication() {
             <div>
               <h2>Advanced Composite Manufacturing</h2>
               <p>Our facility specializes in FRP fabrication using advanced cold moulding processes, wood and metal sheet encapsulation, and hydraulic press finishing techniques.</p>
-              <p style={{ marginTop: '16px' }}>We manufacture durable, lightweight, and high-strength composite components for a wide range of industrial and commercial applications.</p>
-              <p style={{ marginTop: '16px' }}>From structural panels to custom enclosures, our composite shop delivers precision-crafted FRP parts with consistent quality and finish on every run.</p>
+              <p style={{ marginTop: '0' }}>We manufacture durable, lightweight, and high-strength composite components for a wide range of industrial and commercial applications.</p>
+              <p style={{ marginTop: '0' }}>From structural panels to custom enclosures, our composite shop delivers precision-crafted FRP parts with consistent quality and finish on every run.</p>
             </div>
             <div className="dies-intro-img">
               <img src="/frp.jpeg" alt="FRP Composite Fabrication" />

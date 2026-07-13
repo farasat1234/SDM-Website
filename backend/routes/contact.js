@@ -1,8 +1,11 @@
 const express = require('express');
 const router = express.Router();
+const multer = require('multer');
 const { sendContactEmail } = require('../services/emailService');
 
-router.post('/', async (req, res) => {
+const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 10 * 1024 * 1024 } });
+
+router.post('/', upload.single('attachment'), async (req, res) => {
   const { name, company, email, phone, service, details } = req.body;
 
   if (!name || !email || !service) {
@@ -10,7 +13,7 @@ router.post('/', async (req, res) => {
   }
 
   try {
-    await sendContactEmail({ name, company, email, phone, service, details });
+    await sendContactEmail({ name, company, email, phone, service, details, attachment: req.file || null });
     res.json({ success: true, message: 'Enquiry sent successfully.' });
   } catch (err) {
     console.error('Contact email error:', err.message);

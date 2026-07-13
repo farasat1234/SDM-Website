@@ -5,19 +5,26 @@ const BACKEND = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5000';
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', company: '', email: '', phone: '', service: '', details: '' });
+  const [file, setFile] = useState(null);
   const [status, setStatus] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const handle = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+  const handleFile = (e) => setFile(e.target.files[0] || null);
 
   const submit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setStatus(null);
     try {
-      await axios.post(`${BACKEND}/api/contact`, form);
+      const data = new FormData();
+      Object.entries(form).forEach(([k, v]) => data.append(k, v));
+      if (file) data.append('attachment', file);
+      await axios.post(`${BACKEND}/api/contact`, data, { headers: { 'Content-Type': 'multipart/form-data' } });
       setStatus({ ok: true, msg: '✓ Enquiry sent! We will respond within 24 hours.' });
       setForm({ name: '', company: '', email: '', phone: '', service: '', details: '' });
+      setFile(null);
+      document.getElementById('contact-file-input').value = '';
     } catch {
       setStatus({ ok: false, msg: 'Failed to send. Please email info@systemdiesandmoulds.com directly.' });
     } finally {
@@ -95,6 +102,34 @@ export default function Contact() {
           <div className="form-group">
             <label>Project Details</label>
             <textarea name="details" value={form.details} onChange={handle} placeholder="Describe your requirements, materials, quantities, and any relevant specifications..." />
+          </div>
+          <div className="form-group">
+            <label>Upload Technical Drawing</label>
+            <div className="file-upload-wrap">
+              {!file && (
+                <input
+                  id="contact-file-input"
+                  type="file"
+                  accept=".jpg,.jpeg,.png,.pdf,.dwg,.dxf,.step,.stp,.igs,.iges"
+                  onChange={handleFile}
+                  className="file-upload-input"
+                />
+              )}
+              <div className={`file-upload-box${file ? ' file-upload-box--filled' : ''}`}>
+                <span className="file-upload-icon">📎</span>
+                <span className="file-upload-label">
+                  {file ? file.name : 'Click to attach or drag & drop — JPG, PNG, PDF, DWG, DXF, STEP'}
+                </span>
+                {file && (
+                  <button
+                    type="button"
+                    className="file-upload-remove"
+                    onClick={() => { setFile(null); document.getElementById('contact-file-input') && (document.getElementById('contact-file-input').value = ''); }}
+                    title="Remove attachment"
+                  >&#x2715;</button>
+                )}
+              </div>
+            </div>
           </div>
           <button type="submit" className="btn-primary" style={{ border: 'none', fontFamily: 'Inter, sans-serif', cursor: 'pointer', opacity: loading ? 0.7 : 1, background: 'var(--navy)', color: '#fff', borderRadius: '8px' }} disabled={loading}>
             {loading ? 'Sending...' : 'Send Enquiry →'}

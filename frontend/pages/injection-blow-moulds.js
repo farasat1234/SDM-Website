@@ -1,4 +1,4 @@
-﻿import Head from 'next/head';
+import Head from 'next/head';
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -17,7 +17,7 @@ const features = [
   {
     num: '03',
     title: 'Advanced Cooling Channel Design',
-    desc: 'Our moulds feature strategically designed cooling channels that ensure uniform temperature distribution, faster cooling cycles, and improved part consistency â€” enhancing overall productivity.',
+    desc: 'Our moulds feature strategically designed cooling channels that ensure uniform temperature distribution, faster cooling cycles, and improved part consistency — enhancing overall productivity.',
   },
   {
     num: '04',
@@ -50,9 +50,9 @@ export default function InjectionBlowMoulds() {
   return (
     <>
       <Head>
-        <title>Injection & Blow Moulds â€” System Dies & Mould | Karachi</title>
+        <title>Injection &amp; Blow Moulds — System Dies &amp; Mould | Karachi</title>
         <meta name="description" content="High-precision plastic injection moulds, blow moulds, and rubber mould tools engineered for automotive, packaging, consumer goods, and industrial applications." />
-        <link rel="icon" href="/SDM_Logo2.jpeg" />
+        <link rel="icon" href="/SDM-LOGO-white.jpg" />
       </Head>
       <Navbar />
 
@@ -60,8 +60,8 @@ export default function InjectionBlowMoulds() {
       <div className="inj-hero">
         <div className="inj-hero-overlay" />
         <div className="inj-hero-content">
-          <Link href="/#services" className="dies-back">â† Back to Services</Link>
-          <div className="section-tag" style={{ marginTop: '16px' }}>Mould Solutions</div>
+          <Link href="/#services" className="dies-back"> Back to Services</Link>
+          <div className="section-tag" style={{ marginTop: '0' }}>Mould Solutions</div>
           <h1>Injection &amp; Blow Moulds</h1>
           <p>High-precision mould tools engineered for consistent performance, durability, and high-volume production efficiency across automotive, packaging, and consumer applications.</p>
         </div>
@@ -75,8 +75,8 @@ export default function InjectionBlowMoulds() {
             <div>
               <h2>Precision Mould Manufacturing</h2>
               <p>We design and manufacture high-precision plastic injection moulds, blow moulds, and rubber mould tools engineered for consistent performance, durability, and high-volume production efficiency.</p>
-              <p style={{ marginTop: '16px' }}>Our mould solutions are developed with a strong focus on product quality, cycle time reduction, and long tool life, making them ideal for automotive, packaging, consumer goods, and industrial applications.</p>
-              <p style={{ marginTop: '16px' }}>Whether you need custom injection moulds, blow moulds for packaging, or durable rubber mould tooling, we deliver solutions that combine precision engineering with production efficiency.</p>
+              <p style={{ marginTop: '0' }}>Our mould solutions are developed with a strong focus on product quality, cycle time reduction, and long tool life, making them ideal for automotive, packaging, consumer goods, and industrial applications.</p>
+              <p style={{ marginTop: '0' }}>Whether you need custom injection moulds, blow moulds for packaging, or durable rubber mould tooling, we deliver solutions that combine precision engineering with production efficiency.</p>
             </div>
             <div className="dies-intro-img">
               <img src="/injection.jpg" alt="Injection and blow mould tooling" />
@@ -84,7 +84,7 @@ export default function InjectionBlowMoulds() {
           </div>
         </section>
 
-        {/* Production Facilities — Featured Projects style */}
+        {/* Production Facilities */}
         <section className="inj-types">
           <div className="section-tag">Our Facilities</div>
           <h2 className="section-title">Moulding Production<br />Capabilities</h2>
@@ -93,16 +93,17 @@ export default function InjectionBlowMoulds() {
           <div className="projects-grid">
 
             {/* Card 1 — Injection Moulding (featured, spans 2 rows) */}
-            <div className="project-card featured">
-              <span className="bg-icon">🏭</span>
-              <div className="project-tag">Injection Moulding</div>
-              <h3>Plastic Injection Moulding</h3>
-              <p>Our core capability — high-precision single &amp; multi-cavity moulds for consistent part quality, tight tolerances, and high-volume production. Serving automotive, electrical, industrial, and consumer product manufacturers.</p>
+            <div className="project-card featured" style={{ backgroundImage: 'url(/injection.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+              <div className="project-card-overlay"></div>
+              <span className="bg-icon" style={{ opacity: 0 }}>&#127981;</span>
+              <div className="project-tag" style={{ position: 'relative', zIndex: 2 }}>Injection Moulding</div>
+              <h3 style={{ position: 'relative', zIndex: 2 }}>Plastic Injection Moulding</h3>
+              <p style={{ position: 'relative', zIndex: 2 }}>Our core capability — high-precision single &amp; multi-cavity moulds for consistent part quality, tight tolerances, and high-volume production. Serving automotive, electrical, industrial, and consumer product manufacturers.</p>
             </div>
 
             {/* Card 2 — Blow Moulding */}
             <div className="project-card">
-              <span className="bg-icon">💨</span>
+              <span className="bg-icon">&#128168;</span>
               <div className="project-tag">Blow Moulding</div>
               <h3>Blow Moulding</h3>
               <p>Extrusion, injection &amp; stretch blow mould tooling for bottles, containers, and packaging applications.</p>
@@ -110,7 +111,7 @@ export default function InjectionBlowMoulds() {
 
             {/* Card 3 — Vertical Moulding */}
             <div className="project-card">
-              <span className="bg-icon">⬆️</span>
+              <span className="bg-icon">&#11014;&#65039;</span>
               <div className="project-tag">Vertical Moulding</div>
               <h3>Vertical Injection Moulding</h3>
               <p>JSW 150T, TKC 145T, JMW 5T &amp; AM701 1.5T — ideal for insert moulding and over-moulding of metal &amp; wire components.</p>
@@ -118,7 +119,7 @@ export default function InjectionBlowMoulds() {
 
             {/* Card 4 — Horizontal Moulding */}
             <div className="project-card">
-              <span className="bg-icon">➡️</span>
+              <span className="bg-icon">&#10145;&#65039;</span>
               <div className="project-tag">Horizontal Moulding</div>
               <h3>Horizontal Injection Moulding</h3>
               <p>WELL.TECH 10oz, GOLDSTAR 4oz &amp; DOCTORBOY 2oz — high-speed machines for efficient, high-volume plastic component production.</p>
@@ -126,7 +127,7 @@ export default function InjectionBlowMoulds() {
 
             {/* Card 5 — Pharma / Food & Process */}
             <div className="project-card">
-              <span className="bg-icon">💊</span>
+              <span className="bg-icon">&#128138;</span>
               <div className="project-tag">Pharma / Food &amp; Process</div>
               <h3>Pharma / Food &amp; Process Industry</h3>
               <p>Precision moulded components under strict hygiene standards — FDA-compliant materials, pharmaceutical dispensers, hygienic fittings, and cleanroom-compatible finishes.</p>
@@ -152,7 +153,7 @@ export default function InjectionBlowMoulds() {
           </div>
         </section>
 
-        {/* Industries + Materials */}
+        {/* Industries + Why */}
         <section className="dies-bottom">
           <div className="dies-bottom-grid">
             <div className="dies-industries">
@@ -183,9 +184,9 @@ export default function InjectionBlowMoulds() {
         {/* CTA */}
         <section className="dies-cta">
           <h2>Need a Custom Mould Solution?</h2>
-          <p>Send us your part drawings or product requirements â€” our team will respond with a technical review and quotation within 24 hours.</p>
+          <p>Send us your part drawings or product requirements — our team will respond with a technical review and quotation within 24 hours.</p>
           <Link href="/#contact" style={{ display: 'inline-block', background: 'var(--navy)', color: '#fff', padding: '14px 36px', borderRadius: '6px', fontWeight: 700, textDecoration: 'none', fontSize: '0.88rem', letterSpacing: '0.5px', textTransform: 'uppercase' }}>
-            Request a Quote â†’
+            Request a Quote &#8594;
           </Link>
         </section>
 
@@ -194,4 +195,3 @@ export default function InjectionBlowMoulds() {
     </>
   );
 }
-

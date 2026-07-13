@@ -6,31 +6,26 @@ import Footer from '../components/Footer';
 const capabilities = [
   {
     num: '01',
-    title: '3D Scanning & Measurement',
-    desc: 'High-accuracy 3D scanning of physical components to capture complete surface geometry, complex contours, and fine details — even for worn, damaged, or irregular parts without original drawings.',
-  },
-  {
-    num: '02',
     title: 'CMM Inspection & Dimensional Analysis',
     desc: 'Coordinate Measuring Machine (CMM) inspection for precise dimensional verification of critical features, ensuring the reconstructed model accurately replicates the original component specifications.',
   },
   {
-    num: '03',
+    num: '02',
     title: 'CAD Reconstruction & Modelling',
     desc: 'Conversion of scanned point cloud data into fully parametric 3D CAD models — ready for manufacturing, tooling design, simulation, and product development workflows.',
   },
   {
-    num: '04',
+    num: '03',
     title: 'Production Drawings & Documentation',
     desc: 'Generation of complete 2D engineering drawings, GD&T callouts, and manufacturing documentation from the reconstructed CAD model for seamless handover to production.',
   },
   {
-    num: '05',
+    num: '04',
     title: 'DFM Analysis & Design Optimisation',
     desc: 'Design for Manufacturing (DFM) review during reconstruction — identifying opportunities to improve producibility, reduce cycle times, enhance durability, or update designs for modern manufacturing processes.',
   },
   {
-    num: '06',
+    num: '05',
     title: 'Rapid Re-Tooling',
     desc: 'Fast-track tooling design and manufacture based on the reconstructed CAD data, minimising production downtime and restoring critical manufacturing capability quickly and cost-effectively.',
   },
@@ -48,7 +43,7 @@ export default function ReverseEngineering() {
       <Head>
         <title>Reverse Engineering — System Dies & Mould | Karachi</title>
         <meta name="description" content="3D scanning, CMM measurement, and CAD reconstruction of legacy parts and obsolete tooling. Rapid re-tooling with full documentation and DFM analysis." />
-        <link rel="icon" href="/SDM_Logo2.jpeg" />
+        <link rel="icon" href="/SDM-LOGO-white.jpg" />
       </Head>
       <Navbar />
 
@@ -56,8 +51,8 @@ export default function ReverseEngineering() {
       <div className="rev-hero">
         <div className="rev-hero-overlay" />
         <div className="rev-hero-content">
-          <Link href="/#services" className="dies-back">← Back to Services</Link>
-          <div className="section-tag" style={{ marginTop: '16px' }}>Digital Reconstruction</div>
+          <Link href="/#services" className="dies-back"> Back to Services</Link>
+          <div className="section-tag" style={{ marginTop: '0' }}>Digital Reconstruction</div>
           <h1>Reverse Engineering</h1>
           <p>3D scanning, CMM measurement, and CAD reconstruction of legacy parts and obsolete tooling — rapid re-tooling with full documentation and DFM analysis.</p>
         </div>
@@ -71,8 +66,8 @@ export default function ReverseEngineering() {
             <div>
               <h2>Advanced Reverse Engineering Solutions</h2>
               <p>System Dies &amp; Mould provides advanced reverse engineering solutions for legacy components, worn-out parts, and obsolete tooling where original drawings or CAD data are unavailable. Using high-precision 3D scanning, CMM inspection, and CAD reconstruction technologies, we accurately capture complex geometries and recreate complete digital models for manufacturing and product redevelopment.</p>
-              <p style={{ marginTop: '16px' }}>Our engineering team converts scanned data into fully detailed CAD models, production drawings, and manufacturable tooling designs with complete dimensional validation. Whether it is an automotive component, industrial machine part, mould insert, or fabricated assembly, we ensure precise replication while identifying opportunities for design improvement and production optimization.</p>
-              <p style={{ marginTop: '16px' }}>With rapid re-tooling capabilities and comprehensive DFM (Design for Manufacturing) analysis, System Dies &amp; Mould helps manufacturers reduce downtime, extend equipment life, and restore critical production components quickly and cost-effectively.</p>
+              <p style={{ marginTop: '0' }}>Our engineering team converts scanned data into fully detailed CAD models, production drawings, and manufacturable tooling designs with complete dimensional validation. Whether it is an automotive component, industrial machine part, mould insert, or fabricated assembly, we ensure precise replication while identifying opportunities for design improvement and production optimization.</p>
+              <p style={{ marginTop: '0' }}>With rapid re-tooling capabilities and comprehensive DFM (Design for Manufacturing) analysis, System Dies &amp; Mould helps manufacturers reduce downtime, extend equipment life, and restore critical production components quickly and cost-effectively.</p>
             </div>
             <div className="dies-intro-img">
               <img src="/reverse-eng.jpg" alt="Reverse engineering and 3D scanning" />
@@ -121,7 +116,6 @@ export default function ReverseEngineering() {
             <p>Every reverse engineering project is executed with rigorous dimensional verification to ensure the reconstructed model and re-tooled components match the original part geometry with the accuracy required for production use.</p>
             <div className="dies-quality-grid">
               {[
-                'High-accuracy 3D scanning of complex geometries',
                 'CMM verification of critical dimensions',
                 'Full parametric CAD model deliverable',
                 'Complete 2D drawings and GD&T documentation',

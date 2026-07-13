@@ -1,15 +1,25 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 export default function AdvancedPressing() {
+  const router = useRouter();
+  function goToFacilities() {
+    router.push('/').then(() => {
+      setTimeout(() => {
+        const el = document.getElementById('facilities');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    });
+  }
   return (
     <>
       <Head>
         <title>Advanced Pressing — System Dies & Mould | Karachi</title>
         <meta name="description" content="Precision forming with pneumatic and hydraulic presses ranging from 2 to 40 tons for high-output component manufacturing." />
-        <link rel="icon" href="/SDM_Logo2.jpeg" />
+        <link rel="icon" href="/SDM-LOGO-white.jpg" />
       </Head>
       <Navbar />
 
@@ -17,8 +27,8 @@ export default function AdvancedPressing() {
       <div style={{ position: 'relative', minHeight: '420px', display: 'flex', alignItems: 'flex-end', padding: '120px 5% 64px', backgroundImage: 'url(/dies.webp)', backgroundSize: 'cover', backgroundPosition: 'center', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(15,42,94,0.88) 0%, rgba(30,144,255,0.55) 60%, rgba(15,42,94,0.75) 100%)' }} />
         <div style={{ position: 'relative', zIndex: 2, maxWidth: '700px' }}>
-          <Link href="/#facilities" className="dies-back">← Back to Facilities</Link>
-          <div className="section-tag" style={{ marginTop: '16px' }}>Advanced Pressing</div>
+          <button onClick={goToFacilities} className="dies-back"> Back to Facilities</button>
+          <div className="section-tag" style={{ marginTop: '0' }}>Advanced Pressing</div>
           <h1 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 'clamp(2.8rem, 6vw, 5rem)', lineHeight: 1, letterSpacing: '2px', color: '#fff', margin: '12px 0 20px' }}>Precision Forming &amp; High-Output Production</h1>
           <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1rem', lineHeight: 1.8, maxWidth: '560px' }}>Advanced pneumatic and hydraulic presses from 2 to 40 tons delivering precise forming, smooth finishing, and reliable high-volume component manufacturing.</p>
         </div>
@@ -32,8 +42,8 @@ export default function AdvancedPressing() {
             <div>
               <h2>Precision Forming with High-Output Production</h2>
               <p>Our production line features advanced pneumatic and hydraulic presses ranging from 2 to 40 tons for precision forming and component manufacturing.</p>
-              <p style={{ marginTop: '16px' }}>The facility ensures consistent quality, smooth finishing, accurate shaping, and efficient high-volume production across various industrial applications.</p>
-              <p style={{ marginTop: '16px' }}>From light-duty pneumatic operations to heavy hydraulic forming, our pressing capabilities cover a complete range of material thicknesses and component complexities.</p>
+              <p style={{ marginTop: '0' }}>The facility ensures consistent quality, smooth finishing, accurate shaping, and efficient high-volume production across various industrial applications.</p>
+              <p style={{ marginTop: '0' }}>From light-duty pneumatic operations to heavy hydraulic forming, our pressing capabilities cover a complete range of material thicknesses and component complexities.</p>
             </div>
             <div className="dies-intro-img">
               <img src="/dies.webp" alt="Advanced Pressing Facility" />
