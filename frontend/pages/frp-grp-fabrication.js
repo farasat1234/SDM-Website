@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { FaCheck } from 'react-icons/fa6';
 
 const processes = [
   { num: '01', title: 'Hand Lay-Up', desc: 'Manual application of fiberglass layers with resin for producing large, complex shapes such as tanks, vessels, hoods, and canopies with excellent structural integrity.' },
@@ -22,6 +23,7 @@ export default function FrpGrpFabrication() {
       <Head>
         <title>FRP / GRP Fabrication - System Dies &amp; Mould | Karachi</title>
         <meta name="description" content="Fiberglass reinforced plastic components — tanks, vessels, hoods, canopies, ducts, and custom profiles using hand lay-up, spray-up and could moulding." />
+        <meta name="keywords" content="FRP GRP fabrication Karachi, fiberglass tanks and vessels, GRP ducts manufacturer, hand lay-up fabrication, spray-up composite manufacturing, FRP canopy manufacturer Pakistan, composite tank manufacturer" />
         <link rel="icon" href="/SDM-LOGO-white.jpg" />
       </Head>
       <Navbar />
@@ -102,7 +104,7 @@ export default function FrpGrpFabrication() {
             <div className="dies-quality-grid">
               {['Dimensional inspection on every part', 'Wall thickness uniformity checks', 'Visual & surface finish audit', 'Structural integrity verification', 'Full documentation & traceability'].map((item) => (
                 <div key={item} className="dies-quality-item">
-                  <span className="dies-check">&#10003;</span>
+                  <span className="dies-check"><FaCheck /></span>
                   <span>{item}</span>
                 </div>
               ))}

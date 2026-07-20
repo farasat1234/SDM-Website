@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
+import { FaGear, FaXmark, FaCommentDots, FaPaperPlane } from 'react-icons/fa6';
 
 const BACKEND = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5000';
 
@@ -28,7 +29,7 @@ export default function ChatBot() {
       const { data } = await axios.post(`${BACKEND}/api/chat`, { message: text });
       setMessages((prev) => [...prev, { from: 'bot', text: data.reply }]);
     } catch {
-      setMessages((prev) => [...prev, { from: 'bot', text: 'Sorry, I could not connect. Please call us at 0331-2134341.' }]);
+      setMessages((prev) => [...prev, { from: 'bot', text: 'Sorry, I could not connect. Please call us at 0333-5499004.' }]);
     } finally {
       setTyping(false);
     }
@@ -44,13 +45,13 @@ export default function ChatBot() {
         <div className="chat-window">
           <div className="chat-header">
             <div className="chat-header-info">
-              <div className="chat-avatar">⚙️</div>
+              <div className="chat-avatar"><FaGear /></div>
               <div>
                 <h4>SDM Assistant</h4>
                 <p>System Dies and Mould</p>
               </div>
             </div>
-            <button className="chat-close" onClick={() => setOpen(false)} aria-label="Close chat">✕</button>
+            <button className="chat-close" onClick={() => setOpen(false)} aria-label="Close chat"><FaXmark /></button>
           </div>
 
           <div className="chat-messages">
@@ -69,17 +70,17 @@ export default function ChatBot() {
               placeholder="Ask about our services…"
               autoFocus
             />
-            <button className="chat-send" onClick={send} aria-label="Send">➤</button>
+            <button className="chat-send" onClick={send} aria-label="Send"><FaPaperPlane /></button>
           </div>
         </div>
       )}
 
       <button className="chat-bubble" onClick={() => setOpen((o) => !o)} aria-label="Open chat">
-        {open ? '✕' : '💬'}
+        {open ? <FaXmark /> : <FaCommentDots />}
       </button>
 
       <a
-        href="https://wa.me/923312134341"
+        href="https://wa.me/923335499004"
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp-btn"

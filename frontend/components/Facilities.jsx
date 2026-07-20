@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { FaIndustry, FaBottleWater, FaBuilding, FaScrewdriverWrench, FaMicroscope } from 'react-icons/fa6';
 
 const linkStyle = { position: 'relative', zIndex: 1, display: 'inline-block', marginTop: 'auto', paddingTop: '16px', color: 'var(--navy)', fontSize: '0.82rem', fontWeight: 600, letterSpacing: '0.5px', textDecoration: 'none', borderBottom: '1px solid var(--navy)', paddingBottom: '2px' };
 const pStyle = { overflow: 'auto', maxHeight: '4.8em', lineHeight: '1.6', display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflowY: 'auto' };
@@ -17,7 +18,7 @@ export default function Facilities() {
 
         {/* Card 1 — Featured */}
         <div className="project-card featured fac-wm" style={{ '--fac-wm': 'url(/injection.jpg)', isolation: 'isolate' }}>
-          <span className="bg-icon">🏭</span>
+          <span className="bg-icon"><FaIndustry /></span>
           <div className="project-tag">High Volume</div>
           <h3>Injection Moulding Facility</h3>
           <p>
@@ -38,7 +39,7 @@ export default function Facilities() {
 
         {/* Card 2 */}
         <div className="project-card fac-wm" style={{ display: 'flex', flexDirection: 'column', '--fac-wm': 'url(/injection-mould.jpg)' }}>
-          <span className="bg-icon">🍼</span>
+          <span className="bg-icon"><FaBottleWater /></span>
           <div className="project-tag">Bottle Production</div>
           <h3>Advanced Blowing Facility</h3>
           <p style={pStyle}>
@@ -49,7 +50,7 @@ export default function Facilities() {
 
         {/* Card 3 */}
         <div className="project-card fac-wm" style={{ display: 'flex', flexDirection: 'column', '--fac-wm': 'url(/frp.jpeg)' }}>
-          <span className="bg-icon">🧱</span>
+          <span className="bg-icon"><FaBuilding /></span>
           <div className="project-tag">FRP Fabrication</div>
           <h3>Advanced Composite Manufacturing</h3>
           <p style={pStyle}>
@@ -60,7 +61,7 @@ export default function Facilities() {
 
         {/* Card 4 */}
         <div className="project-card fac-wm" style={{ borderTop: 'none', display: 'flex', flexDirection: 'column', '--fac-wm': 'url(/automotive-tooling.jpg)' }}>
-          <span className="bg-icon">🔧</span>
+          <span className="bg-icon"><FaScrewdriverWrench /></span>
           <div className="project-tag">Advanced Pressing</div>
           <h3>Precision Forming &amp; High-Output Production</h3>
           <p style={pStyle}>
@@ -71,7 +72,7 @@ export default function Facilities() {
 
         {/* Card 5 */}
         <div className="project-card fac-wm" style={{ borderTop: 'none', display: 'flex', flexDirection: 'column', '--fac-wm': 'url(/injection-3.jpeg)' }}>
-          <span className="bg-icon">🧬</span>
+          <span className="bg-icon"><FaMicroscope /></span>
           <div className="project-tag">Pharma &amp; Food Processing</div>
           <h3>Cleanroom Manufacturing Environment</h3>
           <p style={pStyle}>

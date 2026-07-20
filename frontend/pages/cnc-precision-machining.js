@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { FaCheck } from 'react-icons/fa6';
 
 const capabilities = [
   { num: '01', title: '3-Axis & 4-Axis CNC Milling', desc: 'Multi-axis milling for complex geometries, contoured surfaces, and precision features — from simple prismatic parts to highly intricate 3D components.' },
@@ -23,6 +24,7 @@ export default function CncPrecisionMachining() {
       <Head>
         <title>CNC Precision Machining — System Dies &amp; Mould | Karachi</title>
         <meta name="description" content="High-precision CNC machining services — 3-axis & 4-axis milling, turning, grinding. ±0.005mm tolerances for automotive, industrial, and engineering applications." />
+        <meta name="keywords" content="CNC precision machining Karachi, CNC milling Pakistan, CNC turning services, 3-axis 4-axis CNC machining, precision grinding, CNC machine shop Karachi, tight tolerance machining, automotive CNC parts, industrial CNC machining Pakistan" />
         <link rel="icon" href="/SDM-LOGO-white.jpg" />
       </Head>
       <Navbar />
@@ -106,7 +108,7 @@ export default function CncPrecisionMachining() {
                 'Full dimensional reporting available',
               ].map((item) => (
                 <div key={item} className="dies-quality-item">
-                  <span className="dies-check">&#10003;</span>
+                  <span className="dies-check"><FaCheck /></span>
                   <span>{item}</span>
                 </div>
               ))}

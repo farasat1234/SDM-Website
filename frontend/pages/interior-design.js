@@ -6,46 +6,46 @@ import Footer from '../components/Footer';
 
 const tabs = [
   { label: 'All', images: [
-    { src: '/ourprojects/Interior Design/AC Condencor Cover.png',          caption: 'AC Condenser Cover' },
-    { src: '/ourprojects/Interior Design/Bracket for Oxy.png',             caption: 'Bracket for Oxygen' },
-    { src: '/ourprojects/Interior Design/Canopy with condensor.png',       caption: 'Canopy with Condenser' },
-    { src: '/ourprojects/Interior Design/Cooler Bkt.png',                  caption: 'Cooler Bracket' },
-    { src: '/ourprojects/Interior Design/First Aid Box.jpg',               caption: 'First Aid Box' },
-    { src: '/ourprojects/Interior Design/Fuel Neck Inner.png',             caption: 'Fuel Neck Inner' },
-    { src: '/ourprojects/Interior Design/Fuel Neck Outer.png',             caption: 'Fuel Neck Outer' },
-    { src: '/ourprojects/Interior Design/Infill Panel.png',                caption: 'Infill Panel' },
-    { src: '/ourprojects/Interior Design/Interior Roof Panel.png',         caption: 'Interior Roof Panel' },
-    { src: '/ourprojects/Interior Design/Interiri Corner.png',             caption: 'Interior Corner' },
-    { src: '/ourprojects/Interior Design/Over Cap Canopy.png',             caption: 'Over Cap Canopy' },
-    { src: '/ourprojects/Interior Design/Rear Step Lock.png',              caption: 'Rear Step Lock' },
-    { src: '/ourprojects/Interior Design/Roof Locker.png',                 caption: 'Roof Locker' },
-    { src: '/ourprojects/Interior Design/Spare Wheel Carrier.png',         caption: 'Spare Wheel Carrier' },
-    { src: '/ourprojects/Interior Design/Stowage Bkt with cup Handle.png', caption: 'Stowage Bracket with Cup Handle' },
-    { src: '/ourprojects/Interior Design/Wheel Box Pair.png',              caption: 'Wheel Box Pair' },
-    { src: '/ourprojects/Interior Design/wheel Box.png',                   caption: 'Wheel Box' },
+    { src: '/OurProjects/Interior Design/AC Condencor Cover.png',          caption: 'AC Condenser Cover' },
+    { src: '/OurProjects/Interior Design/Bracket for Oxy.png',             caption: 'Bracket for Oxygen' },
+    { src: '/OurProjects/Interior Design/Canopy with condensor.png',       caption: 'Canopy with Condenser' },
+    { src: '/OurProjects/Interior Design/Cooler Bkt.png',                  caption: 'Cooler Bracket' },
+    { src: '/OurProjects/Interior Design/First Aid Box.jpg',               caption: 'First Aid Box' },
+    { src: '/OurProjects/Interior Design/Fuel Neck Inner.png',             caption: 'Fuel Neck Inner' },
+    { src: '/OurProjects/Interior Design/Fuel Neck Outer.png',             caption: 'Fuel Neck Outer' },
+    { src: '/OurProjects/Interior Design/Infill Panel.png',                caption: 'Infill Panel' },
+    { src: '/OurProjects/Interior Design/Interior Roof Panel.png',         caption: 'Interior Roof Panel' },
+    { src: '/OurProjects/Interior Design/Interiri Corner.png',             caption: 'Interior Corner' },
+    { src: '/OurProjects/Interior Design/Over Cap Canopy.png',             caption: 'Over Cap Canopy' },
+    { src: '/OurProjects/Interior Design/Rear Step Lock.png',              caption: 'Rear Step Lock' },
+    { src: '/OurProjects/Interior Design/Roof Locker.png',                 caption: 'Roof Locker' },
+    { src: '/OurProjects/Interior Design/Spare Wheel Carrier.png',         caption: 'Spare Wheel Carrier' },
+    { src: '/OurProjects/Interior Design/Stowage Bkt with cup Handle.png', caption: 'Stowage Bracket with Cup Handle' },
+    { src: '/OurProjects/Interior Design/Wheel Box Pair.png',              caption: 'Wheel Box Pair' },
+    { src: '/OurProjects/Interior Design/wheel Box.png',                   caption: 'Wheel Box' },
   ]},
   { label: 'Panels & Trim', images: [
-    { src: '/ourprojects/Interior Design/Infill Panel.png',        caption: 'Infill Panel' },
-    { src: '/ourprojects/Interior Design/Interior Roof Panel.png', caption: 'Interior Roof Panel' },
-    { src: '/ourprojects/Interior Design/Interiri Corner.png',     caption: 'Interior Corner' },
-    { src: '/ourprojects/Interior Design/Roof Locker.png',         caption: 'Roof Locker' },
+    { src: '/OurProjects/Interior Design/Infill Panel.png',        caption: 'Infill Panel' },
+    { src: '/OurProjects/Interior Design/Interior Roof Panel.png', caption: 'Interior Roof Panel' },
+    { src: '/OurProjects/Interior Design/Interiri Corner.png',     caption: 'Interior Corner' },
+    { src: '/OurProjects/Interior Design/Roof Locker.png',         caption: 'Roof Locker' },
   ]},
   { label: 'Canopy & AC', images: [
-    { src: '/ourprojects/Interior Design/AC Condencor Cover.png',    caption: 'AC Condenser Cover' },
-    { src: '/ourprojects/Interior Design/Canopy with condensor.png', caption: 'Canopy with Condenser' },
-    { src: '/ourprojects/Interior Design/Cooler Bkt.png',            caption: 'Cooler Bracket' },
-    { src: '/ourprojects/Interior Design/Over Cap Canopy.png',       caption: 'Over Cap Canopy' },
+    { src: '/OurProjects/Interior Design/AC Condencor Cover.png',    caption: 'AC Condenser Cover' },
+    { src: '/OurProjects/Interior Design/Canopy with condensor.png', caption: 'Canopy with Condenser' },
+    { src: '/OurProjects/Interior Design/Cooler Bkt.png',            caption: 'Cooler Bracket' },
+    { src: '/OurProjects/Interior Design/Over Cap Canopy.png',       caption: 'Over Cap Canopy' },
   ]},
   { label: 'Brackets & Fittings', images: [
-    { src: '/ourprojects/Interior Design/Bracket for Oxy.png',             caption: 'Bracket for Oxygen' },
-    { src: '/ourprojects/Interior Design/Fuel Neck Inner.png',             caption: 'Fuel Neck Inner' },
-    { src: '/ourprojects/Interior Design/Fuel Neck Outer.png',             caption: 'Fuel Neck Outer' },
-    { src: '/ourprojects/Interior Design/Rear Step Lock.png',              caption: 'Rear Step Lock' },
-    { src: '/ourprojects/Interior Design/Spare Wheel Carrier.png',         caption: 'Spare Wheel Carrier' },
-    { src: '/ourprojects/Interior Design/Stowage Bkt with cup Handle.png', caption: 'Stowage Bracket with Cup Handle' },
-    { src: '/ourprojects/Interior Design/Wheel Box Pair.png',              caption: 'Wheel Box Pair' },
-    { src: '/ourprojects/Interior Design/wheel Box.png',                   caption: 'Wheel Box' },
-    { src: '/ourprojects/Interior Design/First Aid Box.jpg',               caption: 'First Aid Box' },
+    { src: '/OurProjects/Interior Design/Bracket for Oxy.png',             caption: 'Bracket for Oxygen' },
+    { src: '/OurProjects/Interior Design/Fuel Neck Inner.png',             caption: 'Fuel Neck Inner' },
+    { src: '/OurProjects/Interior Design/Fuel Neck Outer.png',             caption: 'Fuel Neck Outer' },
+    { src: '/OurProjects/Interior Design/Rear Step Lock.png',              caption: 'Rear Step Lock' },
+    { src: '/OurProjects/Interior Design/Spare Wheel Carrier.png',         caption: 'Spare Wheel Carrier' },
+    { src: '/OurProjects/Interior Design/Stowage Bkt with cup Handle.png', caption: 'Stowage Bracket with Cup Handle' },
+    { src: '/OurProjects/Interior Design/Wheel Box Pair.png',              caption: 'Wheel Box Pair' },
+    { src: '/OurProjects/Interior Design/wheel Box.png',                   caption: 'Wheel Box' },
+    { src: '/OurProjects/Interior Design/First Aid Box.jpg',               caption: 'First Aid Box' },
   ]},
 ];
 
@@ -66,7 +66,12 @@ export default function InteriorDesign() {
 
   return (
     <>
-      <Head><title>Interior Trim & Accessories - SDM</title><link rel="icon" href="/SDM-LOGO-white.jpg" /></Head>
+      <Head>
+        <title>Interior Trim & Accessories - SDM</title>
+        <meta name="description" content="Precision interior trim components and accessories including brackets, panels, covers, and fittings engineered for automotive and industrial vehicles." />
+        <meta name="keywords" content="interior trim manufacturer Karachi, vehicle interior accessories, automotive trim parts Pakistan, custom brackets and panels, interior fittings manufacturer" />
+        <link rel="icon" href="/SDM-LOGO-white.jpg" />
+      </Head>
       <Navbar />
       <div className="bf-hero">
         <div className="bf-hero-overlay" />

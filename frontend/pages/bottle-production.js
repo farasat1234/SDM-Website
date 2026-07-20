@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { FaCheck } from 'react-icons/fa6';
 
 export default function BottleProduction() {
   const router = useRouter();
@@ -19,6 +20,7 @@ export default function BottleProduction() {
       <Head>
         <title>Bottle Production — System Dies & Mould | Karachi</title>
         <meta name="description" content="Advanced ASB Automatic Stretch Blow and IBM Injection Blow Moulding facility for high-quality bottle manufacturing including pharma-grade containers." />
+        <meta name="keywords" content="bottle production Karachi, ASB stretch blow moulding, injection blow moulding Pakistan, PET bottle manufacturer, pharma grade bottle manufacturing, plastic bottle production Karachi" />
         <link rel="icon" href="/SDM-LOGO-white.jpg" />
       </Head>
       <Navbar />
@@ -106,7 +108,7 @@ export default function BottleProduction() {
             <div className="dies-quality-grid">
               {['Dimensional accuracy on every batch', 'Wall thickness uniformity checks', 'Visual & surface finish inspection', 'Pharma-grade compliance checks', 'High-volume repeatability verified'].map((item) => (
                 <div key={item} className="dies-quality-item">
-                  <span className="dies-check">✓</span>
+                  <span className="dies-check"><FaCheck /></span>
                   <span>{item}</span>
                 </div>
               ))}

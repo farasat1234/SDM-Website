@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { FaLocationDot, FaPhone, FaEnvelope, FaGlobe, FaClock, FaPaperclip } from 'react-icons/fa6';
 
 const BACKEND = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5000';
 
@@ -21,7 +22,7 @@ export default function Contact() {
       Object.entries(form).forEach(([k, v]) => data.append(k, v));
       if (file) data.append('attachment', file);
       await axios.post(`${BACKEND}/api/contact`, data, { headers: { 'Content-Type': 'multipart/form-data' } });
-      setStatus({ ok: true, msg: '✓ Enquiry sent! We will respond within 24 hours.' });
+      setStatus({ ok: true, msg: 'Enquiry sent! We will respond within 24 hours.' });
       setForm({ name: '', company: '', email: '', phone: '', service: '', details: '' });
       setFile(null);
       document.getElementById('contact-file-input').value = '';
@@ -42,23 +43,23 @@ export default function Contact() {
         </p>
         <div className="contact-details">
           <div className="contact-item">
-            <div className="contact-icon">📍</div>
+            <div className="contact-icon"><FaLocationDot /></div>
             <div><h5>Address</h5><p>C-47, SITE, Super Highway, Karachi, Pakistan</p></div>
           </div>
           <div className="contact-item">
-            <div className="contact-icon">📞</div>
-            <div><h5>Phone</h5><p>0331-2134341</p></div>
+            <div className="contact-icon"><FaPhone /></div>
+            <div><h5>Phone</h5><p>0333-5499004</p></div>
           </div>
           <div className="contact-item">
-            <div className="contact-icon">✉️</div>
+            <div className="contact-icon"><FaEnvelope /></div>
             <div><h5>Email</h5><p>info@systemdiesandmoulds.com</p></div>
           </div>
           <div className="contact-item">
-            <div className="contact-icon">🌐</div>
+            <div className="contact-icon"><FaGlobe /></div>
             <div><h5>Website</h5><p>www.systemdiesandmoulds.com</p></div>
           </div>
           <div className="contact-item">
-            <div className="contact-icon">🕐</div>
+            <div className="contact-icon"><FaClock /></div>
             <div><h5>Working Hours</h5><p>Mon – Sat: 8:00 AM – 6:00 PM</p></div>
           </div>
         </div>
@@ -116,7 +117,7 @@ export default function Contact() {
                 />
               )}
               <div className={`file-upload-box${file ? ' file-upload-box--filled' : ''}`}>
-                <span className="file-upload-icon">📎</span>
+                <span className="file-upload-icon"><FaPaperclip /></span>
                 <span className="file-upload-label">
                   {file ? file.name : 'Click to attach or drag & drop — JPG, PNG, PDF, DWG, DXF, STEP'}
                 </span>

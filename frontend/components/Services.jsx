@@ -1,12 +1,13 @@
 import Link from 'next/link';
+import { FaScrewdriverWrench, FaIndustry, FaBuilding, FaGear, FaRulerCombined, FaArrowsRotate } from 'react-icons/fa6';
 
 const services = [
-  { num: '01', icon: '🔩', title: 'Dies & Press Tools', desc: 'Progressive dies, blanking dies, deep draw tools, and compound dies machined to tight tolerances. Suitable for high-volume automotive and sheet metal stampings.' },
-  { num: '02', icon: '🏭', title: 'Injection & Blow Moulds', desc: 'Plastic injection moulds, blow moulds, and rubber moulds designed with optimal gate/runner systems, cooling channels, and surface finishes for quality production.' },
-  { num: '03', icon: '🧱', title: 'FRP / GRP Fabrication', desc: 'Fiberglass reinforced plastic components — tanks, vessels, hoods, canopies, ducts, and custom profiles using hand lay-up, spray-up and could moulding.' },
-  { num: '04', icon: '⚙️', title: 'CNC Precision Machining', desc: '3-axis & 4-axis CNC milling, turning, and grinding for steel, aluminum, brass, and engineering plastics. ±0.005mm tolerances routinely achieved.' },
-  { num: '05', icon: '📐', title: 'Jigs & Fixtures', desc: 'Assembly jigs, welding fixtures, checking gauges, and drilling templates engineered to reduce cycle times and guarantee assembly repeatability on the production floor.' },
-  { num: '06', icon: '🔄', title: 'Reverse Engineering', desc: '3D scanning, CMM measurement, and CAD reconstruction of legacy parts and obsolete tooling. Rapid re-tooling with full documentation and DFM analysis.', img: '/reverse-eng.jpg', href: '/reverse-engineering' },
+  { num: '01', icon: <FaScrewdriverWrench />, title: 'Dies & Press Tools', desc: 'Progressive dies, blanking dies, deep draw tools, and compound dies machined to tight tolerances. Suitable for high-volume automotive and sheet metal stampings.' },
+  { num: '02', icon: <FaIndustry />, title: 'Injection & Blow Moulds', desc: 'Plastic injection moulds, blow moulds, and rubber moulds designed with optimal gate/runner systems, cooling channels, and surface finishes for quality production.' },
+  { num: '03', icon: <FaBuilding />, title: 'FRP / GRP Fabrication', desc: 'Fiberglass reinforced plastic components — tanks, vessels, hoods, canopies, ducts, and custom profiles using hand lay-up, spray-up and could moulding.' },
+  { num: '04', icon: <FaGear />, title: 'CNC Precision Machining', desc: '3-axis & 4-axis CNC milling, turning, and grinding for steel, aluminum, brass, and engineering plastics. ±0.005mm tolerances routinely achieved.' },
+  { num: '05', icon: <FaRulerCombined />, title: 'Jigs & Fixtures', desc: 'Assembly jigs, welding fixtures, checking gauges, and drilling templates engineered to reduce cycle times and guarantee assembly repeatability on the production floor.' },
+  { num: '06', icon: <FaArrowsRotate />, title: 'Reverse Engineering', desc: '3D scanning, CMM measurement, and CAD reconstruction of legacy parts and obsolete tooling. Rapid re-tooling with full documentation and DFM analysis.', img: '/reverse-eng.jpg', href: '/reverse-engineering' },
 ];
 
 export default function Services() {

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { FaCheck } from 'react-icons/fa6';
 
 export default function FrpFabrication() {
   const router = useRouter();
@@ -19,6 +20,7 @@ export default function FrpFabrication() {
       <Head>
         <title>FRP Fabrication — System Dies & Mould | Karachi</title>
         <meta name="description" content="Advanced FRP fabrication using cold moulding, wood & metal encapsulation, and hydraulic press finishing for durable composite components." />
+        <meta name="keywords" content="FRP fabrication Karachi, fiberglass reinforced plastic manufacturer, cold moulding Pakistan, composite fabrication, FRP components manufacturer, hydraulic press finishing, fiberglass fabrication Karachi" />
         <link rel="icon" href="/SDM-LOGO-white.jpg" />
       </Head>
       <Navbar />
@@ -106,7 +108,7 @@ export default function FrpFabrication() {
             <div className="dies-quality-grid">
               {['Dimensional inspection on every part', 'Wall thickness uniformity checks', 'Surface finish & visual audit', 'Structural strength verification', 'Full documentation & traceability'].map((item) => (
                 <div key={item} className="dies-quality-item">
-                  <span className="dies-check">✓</span>
+                  <span className="dies-check"><FaCheck /></span>
                   <span>{item}</span>
                 </div>
               ))}

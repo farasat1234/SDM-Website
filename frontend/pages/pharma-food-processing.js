@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { FaCheck } from 'react-icons/fa6';
 
 export default function PharmaFoodProcessing() {
   const router = useRouter();
@@ -19,6 +20,7 @@ export default function PharmaFoodProcessing() {
       <Head>
         <title>Pharma & Food Processing — System Dies & Mould | Karachi</title>
         <meta name="description" content="Cleanroom-grade manufacturing environment for pharmaceutical and food industry production with contamination-controlled processes and strict quality protocols." />
+        <meta name="keywords" content="pharma manufacturing Karachi, food processing equipment Pakistan, cleanroom manufacturing, pharma-grade fabrication, contamination-controlled production, pharmaceutical doors and panels Karachi" />
         <link rel="icon" href="/SDM-LOGO-white.jpg" />
       </Head>
       <Navbar />
@@ -106,7 +108,7 @@ export default function PharmaFoodProcessing() {
             <div className="dies-quality-grid">
               {['Contamination-controlled production', 'Stainless-compatible tooling verified', 'In-process quality checks', 'Full batch documentation & traceability', 'Regulatory compliance assurance'].map((item) => (
                 <div key={item} className="dies-quality-item">
-                  <span className="dies-check">✓</span>
+                  <span className="dies-check"><FaCheck /></span>
                   <span>{item}</span>
                 </div>
               ))}
