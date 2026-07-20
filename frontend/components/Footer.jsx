@@ -35,8 +35,7 @@ export default function Footer() {
           <ul>
             <li><a href="#contact">Automotive</a></li>
             <li><a href="#contact">Infrastructure</a></li>
-            <li><a href="#contact">Chemical &amp; Process</a></li>
-            <li><a href="#contact">Oil &amp; Gas</a></li>
+            <li><a href="#contact">Pharma</a></li>
             <li><a href="#contact">Consumer Products</a></li>
           </ul>
         </div>

@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { FaCheck } from 'react-icons/fa6';
 
 export default function DiesPressTools() {
   return (
@@ -10,6 +11,7 @@ export default function DiesPressTools() {
       <Head>
         <title>Dies &amp; Press Tools  -  System Dies &amp; Mould | Karachi</title>
         <meta name="description" content="High-precision progressive dies, conventional dies, deep draw tools, and compound dies engineered for automotive, electrical, and sheet metal industries." />
+        <meta name="keywords" content="dies and press tools Karachi, progressive dies manufacturer, deep draw tools, compound dies, sheet metal stamping dies, blanking dies, press tool manufacturer Pakistan, automotive stamping dies, tool and die making Karachi" />
         <link rel="icon" href="/SDM-LOGO-white.jpg" />
       </Head>
       <Navbar />
@@ -176,7 +178,7 @@ export default function DiesPressTools() {
             <div className="dies-quality-grid">
               {['Dimensional accuracy','Tight tolerance compliance','Surface finish quality','Tool durability and reliability','Production-ready performance'].map((item) => (
                 <div key={item} className="dies-quality-item">
-                  <span className="dies-check">&#10003;</span>
+                  <span className="dies-check"><FaCheck /></span>
                   <span>{item}</span>
                 </div>
               ))}

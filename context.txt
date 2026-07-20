@@ -1,0 +1,299 @@
+SDM WEBSITE — PROJECT CONTEXT FILE
+Generated: 2026-07-13
+Purpose: Give an LLM/dev enough context to understand, modify, or deploy this codebase.
+
+====================================================================
+1. WHAT THIS PROJECT IS
+====================================================================
+Business/marketing website for "System Dies and Mould" (SDM), a precision
+manufacturing company based in Karachi, Pakistan (dies, press tools,
+injection/blow moulds, FRP/GRP fabrication, CNC machining, jigs & fixtures,
+reverse engineering, EV parts, etc.).
+
+It is a two-tier app:
+  - frontend/  → Next.js 14 (React 18) marketing site — multi-page, mostly
+                 static content, image galleries, a contact form, and a
+                 simple rule-based chatbot widget.
+  - backend/   → Node.js + Express API — handles the contact form (email via
+                 Nodemailer/Gmail SMTP), the chatbot's keyword-matching
+                 replies (also emails a lead summary), and serves a scanned
+                 listing of project photos from the filesystem.
+
+There is no database. State is not persisted anywhere except by emailing
+form/chat submissions to the company inbox. No user auth, no CMS — content
+is hardcoded in React components and page files, and images are static
+files under frontend/public/.
+
+====================================================================
+2. TECH STACK
+====================================================================
+Frontend:
+  - Next.js 14.2.5 (Pages Router, NOT App Router — routes live in frontend/pages/*.js)
+  - React 18.3.1 / react-dom 18.3.1
+  - three.js ^0.184.0 (used for a 3D animated background component)
+  - axios 1.7.2 (HTTP calls from browser to backend API)
+  - Plain CSS (frontend/styles/globals.css) — no Tailwind/CSS-in-JS framework
+  - reactStrictMode enabled; no other custom next.config.js settings
+
+Backend:
+  - Node.js + Express (no framework version pinned, uses "*" in package.json —
+    should pin versions before deploying to prod)
+  - cors, body-parser, dotenv
+  - multer (in-memory storage) for handling file attachments on the contact form
+  - nodemailer for sending email via Gmail SMTP (app password based, not OAuth)
+  - nodemon for dev auto-restart
+
+No TypeScript anywhere (plain .js/.jsx). No test suite present. No CI config
+found in the repo root.
+
+====================================================================
+3. DIRECTORY / FILE STRUCTURE
+====================================================================
+SDM-Website/
+├── README.md                     Setup instructions (already fairly complete)
+├── .gitignore
+├── Clientlogo/                   SOURCE/original client logo images (top-level,
+│                                  outside frontend — appears to be an
+│                                  unoptimized duplicate/original of the set
+│                                  copied into frontend/public/clientlogo/)
+├── Root Picture/                 Misc marketing photos, a Word doc
+│                                  ("prompt for web.docx"), and its own README.
+│                                  Looks like source assets not directly served
+│                                  by the app (i.e. staging area, not public/).
+│
+├── backend/                      Express API server
+│   ├── server.js                 App entrypoint. Sets up CORS (restricted to
+│   │                              FRONTEND_URL), JSON body parsing, mounts:
+│   │                                GET  /health
+│   │                                POST /api/contact  (contact form + optional file attachment)
+│   │                                POST /api/chat     (chatbot message -> reply)
+│   │                              NOTE: routes/projects.js exists but is
+│   │                              NOT mounted in server.js currently (dead code
+│   │                              unless wired up elsewhere) — double check
+│   │                              before relying on GET /api/projects.
+│   ├── package.json               deps: express, cors, body-parser, dotenv,
+│   │                               multer, nodemailer; devDep: nodemon
+│   ├── .env.example                Template for required env vars (see §5)
+│   ├── routes/
+│   │   ├── contact.js             POST /api/contact — multer single-file upload
+│   │   │                          ("attachment" field, 10MB limit, memory
+│   │   │                          storage), validates name/email/service,
+│   │   │                          calls emailService.sendContactEmail()
+│   │   ├── chat.js                POST /api/chat — validates message body,
+│   │   │                          calls chatService.getBotReply() for an
+│   │   │                          instant reply, fires-and-forgets an email
+│   │   │                          via emailService.sendChatSummaryEmail()
+│   │   │                          (lead notification), returns { reply }
+│   │   └── projects.js            GET /  — recursively scans
+│   │                              frontend/public/ourprojects (case-sensitive
+│   │                              path — actual folder is "OurProjects", so
+│   │                              this may fail on case-sensitive filesystems/
+│   │                              Linux hosts; works on Windows/macOS by luck)
+│   │                              for image files and returns JSON
+│   │                              [{ src, caption, category }, ...].
+│   │                              NOT mounted in server.js — verify if used.
+│   └── services/
+│       ├── chatService.js         Simple keyword -> canned-reply lookup table
+│       │                          (no AI/LLM call — pure rule-based bot)
+│       │                          covering greetings, services offered, dies,
+│       │                          moulds, FRP, CNC, jigs, reverse engineering,
+│       │                          pricing, address, contact info, hours, ISO
+│       │                          cert, company history, industries served,
+│       │                          director info, thanks/goodbye. Falls back
+│       │                          to a generic "contact us" message.
+│       └── emailService.js        Nodemailer transporter (Gmail SMTP, app
+│                                  password auth). Two functions:
+│                                    sendContactEmail(data)        — HTML email
+│                                      with form fields + optional attachment,
+│                                      sent to FEEDBACK_EMAIL, replyTo = visitor
+│                                    sendChatSummaryEmail(userMsg, botReply)
+│                                      — HTML email logging each chat exchange
+│                                      as a lead, sent to FEEDBACK_EMAIL
+│                                  Verifies SMTP connection on startup and logs
+│                                  success/failure to console.
+│
+└── frontend/                     Next.js app (Pages Router)
+    ├── next.config.js            Minimal: just reactStrictMode: true
+    ├── package.json              deps: next, react, react-dom, three, axios
+    ├── .gitignore
+    ├── styles/
+    │   └── globals.css           Single global stylesheet (navy/gold theme
+    │                              per README — no CSS modules/Tailwind)
+    ├── pages/                    File-based routing; each file = one route
+    │   ├── _app.js                Custom App — imports globals.css, renders
+    │   │                          page. (Has a stray "// comment" line — likely
+    │   │                          leftover/noise, harmless.)
+    │   ├── index.js               Home page ("/") — composes nearly every
+    │   │                          section component in order: Navbar, Hero,
+    │   │                          Ticker, Services, About, Capabilities,
+    │   │                          Facilities, OurProjects, Projects, Process,
+    │   │                          Clients, Contact, Footer, ChatBot. Sets
+    │   │                          page <Head> (title/meta/favicon). Uses
+    │   │                          IntersectionObserver to fade/slide elements
+    │   │                          into view on scroll (no external animation lib).
+    │   ├── projects.js            Presumably a dedicated projects/gallery page
+    │   └── (15 service-specific landing pages, one per capability):
+    │         advanced-pressing.js, body-fabrication.js, bottle-production.js,
+    │         cnc-precision-machining.js, dies-press-tools.js, ev-golf-cart.js,
+    │         ev-rickshaw.js, frp-fabrication.js, frp-grp-fabrication.js,
+    │         frp-roofing.js, injection-blow-moulds.js, interior-design.js,
+    │         jigs-fixtures.js, pharma-food-processing.js,
+    │         reverse-engineering.js
+    │       Each is presumably a static content page for that specific service
+    │       line (SEO landing pages), likely reusing Navbar/Footer/ChatBot.
+    │
+    ├── components/                Reusable React components (all .jsx, all
+    │                              presentational, no state management lib —
+    │                              local useState/useEffect only)
+    │   ├── Navbar.jsx              Site navigation header
+    │   ├── Hero.jsx                Homepage hero/banner section
+    │   ├── Ticker.jsx              Scrolling ticker (likely stats/clients)
+    │   ├── Services.jsx            Services overview cards grid
+    │   ├── About.jsx                Company "About" section
+    │   ├── Capabilities.jsx        Capabilities/equipment list section
+    │   ├── Facilities.jsx          Facility details section
+    │   ├── OurProjects.jsx         Project photo gallery section (likely
+    │   │                          fetches from backend /api/projects or reads
+    │   │                          a static list — check implementation if
+    │   │                          wiring the projects.js route)
+    │   ├── Projects.jsx            Another projects-related section (distinct
+    │   │                          from OurProjects.jsx — check for overlap/
+    │   │                          intended difference, e.g. featured vs full
+    │   │                          gallery)
+    │   ├── Process.jsx             "Our process" step-by-step section
+    │   ├── Clients.jsx             Client logos section (reads from
+    │   │                          public/clientlogo)
+    │   ├── Contact.jsx             Contact form UI — posts to backend
+    │   │                          POST /api/contact (multipart, with optional
+    │   │                          file attachment)
+    │   ├── Footer.jsx              Site footer
+    │   ├── ChatBot.jsx             Floating chat widget (bottom-right) +
+    │   │                          separate floating WhatsApp button
+    │   │                          (wa.me/923312134341). Posts each user
+    │   │                          message to backend POST /api/chat and
+    │   │                          renders the reply. No streaming — one
+    │   │                          request/response per message. Client-only
+    │   │                          state (messages not persisted).
+    │   └── ThreeBackground.jsx     three.js-powered animated 3D background
+    │                              (likely used behind Hero)
+    │
+    └── public/                    Static assets served at site root
+        ├── OurProjects/           ~239 files — project photo galleries,
+        │                          organized into subfolders by category:
+        │                            "Air Spoiler DIFF MODELS", "Ambulance Parts",
+        │                            "BODY FABRICATION", "Dies & Moulds",
+        │                            "EV Rikshaw", "Ev GOLF CART", "FRP",
+        │                            "Housepipe", "Interior Design",
+        │                            "JIG & Fixure", "PHARMA", "Plasticpart",
+        │                            "Roofing", "SPRING PARTS", "Sheetmetal",
+        │                            "ibre cabin" (likely typo for "fibre cabin")
+        │                          NOTE: backend/routes/projects.js scans a
+        │                          lowercase "ourprojects" path — mismatch
+        │                          with actual "OurProjects" casing to verify.
+        └── clientlogo/            ~20 client logo images (mix of original
+                                   names like Toyota.JPG, Nadra.jpg, and
+                                   numbered files 6.JPG–17.JPG — some renamed
+                                   during a prior sync from top-level
+                                   /Clientlogo/, so numbering ≠ semantic name)
+
+Total frontend/public size: ~239 MB (mostly images — flag this for deployment:
+large repo/slow clones, consider image optimization / CDN / git-lfs before
+deploying).
+
+====================================================================
+4. HOW THE PIECES CONNECT (RUNTIME FLOW)
+====================================================================
+1. Browser loads Next.js frontend (localhost:3000 in dev).
+2. Static marketing content renders directly from React components — no
+   frontend calls needed for most of the page.
+3. Contact form (Contact.jsx) → POST {BACKEND_URL}/api/contact (multipart/
+   form-data with optional file) → backend validates → nodemailer sends a
+   formatted HTML email to FEEDBACK_EMAIL, replyTo set to the visitor's email.
+4. ChatBot widget (ChatBot.jsx) → POST {BACKEND_URL}/api/chat with
+   { message } → backend matches keywords in chatService.js, returns
+   { reply } immediately, and separately (async, non-blocking) emails a lead
+   summary of the exchange to FEEDBACK_EMAIL.
+5. WhatsApp button is a plain external link (wa.me), no backend involvement.
+6. Backend has a GET /api/projects style endpoint (routes/projects.js) meant
+   to scan the public/OurProjects folder and return image metadata as JSON,
+   but IT IS NOT WIRED UP in server.js — confirm intended usage before
+   assuming the frontend gallery is dynamic; likely the gallery components
+   (OurProjects.jsx / Projects.jsx) hardcode paths instead.
+
+Frontend and backend are two separate processes/servers (ports 3000 and
+5000 by default) — there is no server-side rendering that calls the backend
+at build time; all backend calls are client-side (axios in the browser).
+
+====================================================================
+5. ENVIRONMENT VARIABLES
+====================================================================
+backend/.env (copy from backend/.env.example):
+  PORT              - backend server port (default 5000)
+  SMTP_HOST         - e.g. smtp.gmail.com
+  SMTP_PORT         - e.g. 587
+  SMTP_USER         - sending Gmail address
+  SMTP_PASS         - Gmail App Password (16 chars, NOT the account password;
+                      requires 2FA enabled on the Gmail account)
+  FEEDBACK_EMAIL    - inbox that receives contact-form and chat-lead emails
+  FRONTEND_URL      - used for CORS allow-list (must match deployed frontend
+                      origin in production)
+
+frontend/.env.local (not committed; referenced in README but no
+.env.local.example file currently exists in frontend/ — should be added):
+  NEXT_PUBLIC_BACKEND_URL - base URL of backend API (default
+                            http://localhost:5000 in dev)
+
+====================================================================
+6. RUNNING LOCALLY
+====================================================================
+Two separate processes, two terminals:
+  cd backend  && npm install && npm run dev   # http://localhost:5000
+  cd frontend && npm install && npm run dev   # http://localhost:3000
+
+Health check: GET http://localhost:5000/health → { status: "SDM backend running" }
+
+====================================================================
+7. DEPLOYMENT CONSIDERATIONS / KNOWN ISSUES TO FLAG
+====================================================================
+- Two independently deployable services: frontend (Next.js — deploy to
+  Vercel/Node host) and backend (Express — deploy to Render/Railway/EC2/etc.
+  or as a Node service). They are NOT a monorepo with shared build; no
+  Docker/CI config present in repo.
+- CORS on backend is locked to a single FRONTEND_URL origin — must be set
+  correctly per environment (dev vs prod) or contact/chat calls will fail
+  cross-origin in production.
+- backend/package.json pins dependencies with "*" (latest) instead of exact/
+  caret versions for express, cors, dotenv, body-parser, nodemailer — should
+  be pinned before a reproducible production deploy.
+- routes/projects.js is unused/unmounted in server.js — confirm whether the
+  gallery is meant to be dynamic (via this endpoint) or fully static before
+  deploying; also fix the "ourprojects" vs "OurProjects" case mismatch if
+  deploying to a case-sensitive filesystem (Linux).
+- SMTP auth uses a Gmail App Password — fine for low volume, but consider a
+  transactional email provider (SendGrid/SES/Postmark) for reliability at
+  scale/production, since Gmail SMTP has sending limits and can be flagged.
+- No .env files should ever be committed — confirm .gitignore covers both
+  backend/.env and frontend/.env.local (frontend currently has a .gitignore
+  but no .env.local.example was found — add one for onboarding parity with
+  backend/.env.example).
+- Static image assets total ~239 MB under frontend/public — this bloats the
+  repo and slow deploys/builds; consider moving to a CDN/object storage
+  (S3/Cloudinary) and referencing via URL instead of shipping in the Next.js
+  build, especially if deploying frontend to a platform with build-size limits.
+- No automated tests, no TypeScript, no linting config visible at the repo
+  root — verify code correctness manually / add basic checks before major
+  changes.
+- Chatbot is fully rule-based (keyword matching in chatService.js) — it is
+  NOT calling any AI/LLM API. If asked to "improve the chatbot," clarify
+  whether the goal is to keep it rule-based or integrate an actual LLM.
+
+====================================================================
+8. CONTACT / BUSINESS INFO (for reference, embedded across the site)
+====================================================================
+Company: System Dies and Mould (SDM)
+Director: Farasat Karim
+Phone / WhatsApp: 0331-2134341 (+92 331 2134341)
+Email: c47.sdm@gmail.com
+Address: C-47, SITE, Super Highway, Karachi, Pakistan
+Founded: 1998 (per chatbot copy — "25+ years experience")
+Certifications: ISO 9001:2015 (per chatbot copy)

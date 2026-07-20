@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { FaCheck } from 'react-icons/fa6';
 
 const types = [
   {
@@ -46,6 +47,7 @@ export default function JigsFixtures() {
       <Head>
         <title>Jigs &amp; Fixtures - System Dies &amp; Mould | Karachi</title>
         <meta name="description" content="Precision jigs, fixtures, checking gauges, and drilling templates engineered to reduce cycle times and guarantee assembly repeatability on the production floor." />
+        <meta name="keywords" content="jigs and fixtures manufacturer Karachi, welding fixtures Pakistan, assembly jigs manufacturer, checking gauges, drilling templates, machining fixtures Karachi, production tooling manufacturer" />
         <link rel="icon" href="/SDM-LOGO-white.jpg" />
       </Head>
       <Navbar />
@@ -105,7 +107,7 @@ export default function JigsFixtures() {
             <div className="dies-quality-grid">
               {benefits.map((b) => (
                 <div key={b} className="dies-quality-item">
-                  <span className="dies-check">&#10003;</span>
+                  <span className="dies-check"><FaCheck /></span>
                   <span>{b}</span>
                 </div>
               ))}

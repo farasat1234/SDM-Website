@@ -9,7 +9,7 @@ const responses = [
   },
   {
     keywords: ['die', 'press tool', 'stamping', 'progressive', 'blanking'],
-    reply: "Our Dies & Press Tools division manufactures progressive dies, blanking dies, deep draw tools, and compound dies machined to tight tolerances. We serve high-volume automotive and sheet metal stamping applications. Call us at 0331-2134341 for a quote.",
+    reply: "Our Dies & Press Tools division manufactures progressive dies, blanking dies, deep draw tools, and compound dies machined to tight tolerances. We serve high-volume automotive and sheet metal stamping applications. Call us at 0333-5499004 for a quote.",
   },
   {
     keywords: ['mould', 'mold', 'injection', 'blow', 'plastic', 'rubber'],
@@ -33,7 +33,7 @@ const responses = [
   },
   {
     keywords: ['quote', 'quotation', 'price', 'cost', 'pricing', 'how much'],
-    reply: "To get a competitive quotation, please share your drawings or requirements:\n\n📧 Email: c47.sdm@gmail.com\n📞 Phone: 0331-2134341\n\nOr fill in the Contact form on this page and our engineering team will respond within 24 hours.",
+    reply: "To get a competitive quotation, please share your drawings or requirements:\n\n📧 Email: c47.sdm@gmail.com\n📞 Phone: 0333-5499004\n\nOr fill in the Contact form on this page and our engineering team will respond within 24 hours.",
   },
   {
     keywords: ['address', 'location', 'where', 'site', 'karachi', 'office'],
@@ -41,7 +41,7 @@ const responses = [
   },
   {
     keywords: ['phone', 'contact', 'call', 'number', 'reach', 'whatsapp'],
-    reply: "You can reach us at:\n📞 0331-2134341 (also on WhatsApp)\n📧 c47.sdm@gmail.com\n\nOr visit: C-47, SITE, Super Highway, Karachi",
+    reply: "You can reach us at:\n📞 0333-5499004 (also on WhatsApp)\n📧 c47.sdm@gmail.com\n\nOr visit: C-47, SITE, Super Highway, Karachi",
   },
   {
     keywords: ['email', 'mail'],
@@ -65,19 +65,19 @@ const responses = [
   },
   {
     keywords: ['automotive', 'industrial', 'sector', 'industry', 'client'],
-    reply: "SDM serves clients across multiple sectors:\n• Automotive OEMs\n• Industrial equipment manufacturers\n• Chemical & Process plants\n• Infrastructure developers\n• Oil & Gas\n• Consumer products\n\nWe operate across Pakistan and the Gulf region.",
+    reply: "SDM serves clients across multiple sectors:\n• Automotive OEMs\n• Industrial equipment manufacturers\n• Pharma\n• Infrastructure developers\n• Consumer products\n\nWe operate across Pakistan and the Gulf region.",
   },
   {
     keywords: ['director', 'farasat', 'owner', 'management', 'team'],
-    reply: "SDM is led by Mr. Farasat Karim (Director). You can reach him directly at 0331-2134341 or c47.sdm@gmail.com.",
+    reply: "SDM is led by Mr. Farasat Karim (Director). You can reach him directly at 0333-5499004 or c47.sdm@gmail.com.",
   },
   {
     keywords: ['thank', 'thanks', 'thankyou', 'thank you'],
-    reply: "You're welcome! If you need anything else, feel free to ask. You can also reach us at 0331-2134341 or c47.sdm@gmail.com. We look forward to working with you!",
+    reply: "You're welcome! If you need anything else, feel free to ask. You can also reach us at 0333-5499004 or c47.sdm@gmail.com. We look forward to working with you!",
   },
   {
     keywords: ['bye', 'goodbye', 'see you', 'later'],
-    reply: "Goodbye! Thank you for visiting SDM. Don't hesitate to get in touch at 0331-2134341 or c47.sdm@gmail.com whenever you're ready to discuss your project.",
+    reply: "Goodbye! Thank you for visiting SDM. Don't hesitate to get in touch at 0333-5499004 or c47.sdm@gmail.com whenever you're ready to discuss your project.",
   },
 ];
 
@@ -88,7 +88,7 @@ function getBotReply(message) {
       return item.reply;
     }
   }
-  return "Thanks for your message! For the best assistance, please contact us directly:\n\n📞 0331-2134341\n📧 c47.sdm@gmail.com\n📍 C-47, SITE, Super Highway, Karachi\n\nOur team will be happy to help with any enquiry about dies, moulds, FRP, or CNC machining.";
+  return "Thanks for your message! For the best assistance, please contact us directly:\n\n📞 0333-5499004\n📧 c47.sdm@gmail.com\n📍 C-47, SITE, Super Highway, Karachi\n\nOur team will be happy to help with any enquiry about dies, moulds, FRP, or CNC machining.";
 }
 
 module.exports = { getBotReply };

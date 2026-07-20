@@ -1,0 +1,67 @@
+SDM WEBSITE — LOCAL SETUP & RUN INSTRUCTIONS
+==============================================
+
+Two separate apps, two terminals: backend (Express API) and frontend
+(Next.js site). Both must be running at the same time for the site to
+fully work (contact form + chatbot need the backend).
+
+--------------------------------------------------------------------
+1. BACKEND — Terminal 1
+--------------------------------------------------------------------
+cd "c:\SDM Web Latest\SDM-Website\backend"
+npm install
+npm run dev
+
+Runs at: http://localhost:5000
+Health check: http://localhost:5000/health should return
+  {"status":"SDM backend running"}
+
+Requires backend/.env (already created) with:
+  PORT=5000
+  SMTP_HOST=smtp.gmail.com
+  SMTP_PORT=587
+  SMTP_USER=your_gmail@gmail.com
+  SMTP_PASS=your_16_char_app_password
+  FEEDBACK_EMAIL=info@systemdiesandmoulds.com
+  FRONTEND_URL=http://localhost:3000
+
+SMTP_PASS must be a Gmail "App Password" (not your normal Gmail password):
+  1. https://myaccount.google.com/security -> enable 2-Step Verification
+  2. https://myaccount.google.com/apppasswords -> generate one for "Mail"
+  3. Copy the 16-character password into SMTP_PASS with no spaces
+
+--------------------------------------------------------------------
+2. FRONTEND — Terminal 2 (open a new terminal window)
+--------------------------------------------------------------------
+cd "c:\SDM Web Latest\SDM-Website\frontend"
+npm install
+
+Create the local env file (only needed once):
+Copy-Item .env.local.example .env.local
+
+frontend/.env.local should contain:
+  NEXT_PUBLIC_BACKEND_URL=http://localhost:5000
+
+Then run it:
+npm run dev
+
+Runs at: http://localhost:3000
+
+--------------------------------------------------------------------
+3. OPEN THE SITE
+--------------------------------------------------------------------
+http://localhost:3000
+
+Both servers must stay running (two open terminal windows). Test the
+contact form and the chatbot widget — they call the backend at
+NEXT_PUBLIC_BACKEND_URL, so if the backend terminal isn't running, both
+will fail with a connection error.
+
+--------------------------------------------------------------------
+NOTES
+--------------------------------------------------------------------
+- No database — nothing is persisted locally except emails sent via
+  Nodemailer/Gmail SMTP.
+- If NEXT_PUBLIC_BACKEND_URL changes, restart "npm run dev" in the
+  frontend terminal for the change to be picked up.
+- Never commit backend/.env or frontend/.env.local — both are gitignored.

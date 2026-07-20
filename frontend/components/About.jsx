@@ -1,3 +1,5 @@
+import { FaGear, FaCheck } from 'react-icons/fa6';
+
 export default function About() {
   return (
     <section id="about">
@@ -6,8 +8,8 @@ export default function About() {
         <div className="about-box about-box-1">
           <img src="/cnc-machining.jpg" alt="SDM Manufacturing Facility" className="ab-corp-img" />
           <div className="ab-img-overlay" />
-          <div className="ab-gear ab-gear-1">⚙️</div>
-          <div className="ab-gear ab-gear-2">⚙️</div>
+          <div className="ab-gear ab-gear-1"><FaGear /></div>
+          <div className="ab-gear ab-gear-2"><FaGear /></div>
           <div className="ab-particles">
             {[...Array(8)].map((_, i) => <span key={i} className={`ab-particle ab-p${i+1}`} />)}
           </div>
@@ -20,7 +22,7 @@ export default function About() {
           <div className="ab-iso-ring" />
           <div className="big">ISO</div>
           <div className="label">9001:2015</div>
-          <div className="ab-iso-certified">✓ Certified</div>
+          <div className="ab-iso-certified"><FaCheck /> Certified</div>
         </div>
         {/* Stats pill */}
         <div className="about-box about-box-3">

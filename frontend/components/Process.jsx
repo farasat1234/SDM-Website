@@ -1,38 +1,40 @@
+import { FaClipboard, FaLightbulb, FaDesktop, FaGear, FaCircleCheck, FaRulerCombined, FaPencil, FaScrewdriverWrench, FaHammer, FaBox, FaTruck } from 'react-icons/fa6';
+
 const steps = [
   {
     num: '01', title: 'Enquiry & Review',
     desc: 'Technical review of drawings, tolerances, materials, and production volumes.',
-    icon: '📋',
+    icon: <FaClipboard />,
     anim: 'proc-anim-doc',
-    particles: ['📐', '📏'],
+    particles: [<FaRulerCombined key="p1" />, <FaRulerCombined key="p2" />],
   },
   {
     num: '02', title: 'DFM & Quotation',
     desc: 'Design-for-manufacture analysis, risk identification, and competitive quote.',
-    icon: '💡',
+    icon: <FaLightbulb />,
     anim: 'proc-anim-pulse',
-    particles: ['⚙️', '🔧'],
+    particles: [<FaGear key="p1" />, <FaScrewdriverWrench key="p2" />],
   },
   {
     num: '03', title: 'Design & CAD',
     desc: '3D modelling, FEA simulation, and toolpath generation before cutting steel.',
-    icon: '🖥️',
+    icon: <FaDesktop />,
     anim: 'proc-anim-spin',
-    particles: ['📐', '✏️'],
+    particles: [<FaRulerCombined key="p1" />, <FaPencil key="p2" />],
   },
   {
     num: '04', title: 'Manufacture & QC',
     desc: 'Machining, fabrication, heat treatment, coating, and in-process CMM inspection.',
-    icon: '⚙️',
+    icon: <FaGear />,
     anim: 'proc-anim-gear',
-    particles: ['🔩', '🔨'],
+    particles: [<FaScrewdriverWrench key="p1" />, <FaHammer key="p2" />],
   },
   {
     num: '05', title: 'Trial & Handover',
     desc: 'First-article inspection, trial run, PPAP documentation, and delivery.',
-    icon: '✅',
+    icon: <FaCircleCheck />,
     anim: 'proc-anim-check',
-    particles: ['📦', '🚚'],
+    particles: [<FaBox key="p1" />, <FaTruck key="p2" />],
   },
 ];
 

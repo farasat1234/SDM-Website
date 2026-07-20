@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { FaCheck } from 'react-icons/fa6';
 
 export default function AdvancedPressing() {
   const router = useRouter();
@@ -19,6 +20,7 @@ export default function AdvancedPressing() {
       <Head>
         <title>Advanced Pressing — System Dies & Mould | Karachi</title>
         <meta name="description" content="Precision forming with pneumatic and hydraulic presses ranging from 2 to 40 tons for high-output component manufacturing." />
+        <meta name="keywords" content="advanced pressing Karachi, hydraulic press services Pakistan, pneumatic press forming, metal stamping press shop, high-output press manufacturing, sheet metal pressing Karachi" />
         <link rel="icon" href="/SDM-LOGO-white.jpg" />
       </Head>
       <Navbar />
@@ -106,7 +108,7 @@ export default function AdvancedPressing() {
             <div className="dies-quality-grid">
               {['Dimensional accuracy on every part', 'Surface finish & smoothness checks', 'Force calibration & press monitoring', 'Visual inspection on every batch', 'Full production documentation'].map((item) => (
                 <div key={item} className="dies-quality-item">
-                  <span className="dies-check">✓</span>
+                  <span className="dies-check"><FaCheck /></span>
                   <span>{item}</span>
                 </div>
               ))}

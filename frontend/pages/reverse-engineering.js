@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { FaCheck } from 'react-icons/fa6';
 
 const capabilities = [
   {
@@ -43,6 +44,7 @@ export default function ReverseEngineering() {
       <Head>
         <title>Reverse Engineering — System Dies & Mould | Karachi</title>
         <meta name="description" content="3D scanning, CMM measurement, and CAD reconstruction of legacy parts and obsolete tooling. Rapid re-tooling with full documentation and DFM analysis." />
+        <meta name="keywords" content="reverse engineering Karachi, 3D scanning services Pakistan, CMM measurement, CAD reconstruction, legacy part re-tooling, obsolete tooling replacement, DFM analysis Karachi" />
         <link rel="icon" href="/SDM-LOGO-white.jpg" />
       </Head>
       <Navbar />
@@ -123,7 +125,7 @@ export default function ReverseEngineering() {
                 'Dimensional report included with every project',
               ].map((item) => (
                 <div key={item} className="dies-quality-item">
-                  <span className="dies-check">✓</span>
+                  <span className="dies-check"><FaCheck /></span>
                   <span>{item}</span>
                 </div>
               ))}

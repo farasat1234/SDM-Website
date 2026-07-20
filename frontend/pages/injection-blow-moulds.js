@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { FaIndustry, FaWind, FaArrowUp, FaArrowRight, FaCapsules } from 'react-icons/fa6';
 
 const features = [
   {
@@ -52,6 +53,7 @@ export default function InjectionBlowMoulds() {
       <Head>
         <title>Injection &amp; Blow Moulds — System Dies &amp; Mould | Karachi</title>
         <meta name="description" content="High-precision plastic injection moulds, blow moulds, and rubber mould tools engineered for automotive, packaging, consumer goods, and industrial applications." />
+        <meta name="keywords" content="injection mould manufacturer Karachi, blow mould manufacturer Pakistan, plastic injection moulding tools, rubber mould manufacturer, mould design and fabrication, plastic mould maker Karachi, blow moulding tools Pakistan, packaging mould manufacturer" />
         <link rel="icon" href="/SDM-LOGO-white.jpg" />
       </Head>
       <Navbar />
@@ -95,7 +97,7 @@ export default function InjectionBlowMoulds() {
             {/* Card 1 — Injection Moulding (featured, spans 2 rows) */}
             <div className="project-card featured" style={{ backgroundImage: 'url(/injection.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
               <div className="project-card-overlay"></div>
-              <span className="bg-icon" style={{ opacity: 0 }}>&#127981;</span>
+              <span className="bg-icon" style={{ opacity: 0 }}><FaIndustry /></span>
               <div className="project-tag" style={{ position: 'relative', zIndex: 2 }}>Injection Moulding</div>
               <h3 style={{ position: 'relative', zIndex: 2 }}>Plastic Injection Moulding</h3>
               <p style={{ position: 'relative', zIndex: 2 }}>Our core capability — high-precision single &amp; multi-cavity moulds for consistent part quality, tight tolerances, and high-volume production. Serving automotive, electrical, industrial, and consumer product manufacturers.</p>
@@ -103,7 +105,7 @@ export default function InjectionBlowMoulds() {
 
             {/* Card 2 — Blow Moulding */}
             <div className="project-card">
-              <span className="bg-icon">&#128168;</span>
+              <span className="bg-icon"><FaWind /></span>
               <div className="project-tag">Blow Moulding</div>
               <h3>Blow Moulding</h3>
               <p>Extrusion, injection &amp; stretch blow mould tooling for bottles, containers, and packaging applications.</p>
@@ -111,7 +113,7 @@ export default function InjectionBlowMoulds() {
 
             {/* Card 3 — Vertical Moulding */}
             <div className="project-card">
-              <span className="bg-icon">&#11014;&#65039;</span>
+              <span className="bg-icon"><FaArrowUp /></span>
               <div className="project-tag">Vertical Moulding</div>
               <h3>Vertical Injection Moulding</h3>
               <p>JSW 150T, TKC 145T, JMW 5T &amp; AM701 1.5T — ideal for insert moulding and over-moulding of metal &amp; wire components.</p>
@@ -119,7 +121,7 @@ export default function InjectionBlowMoulds() {
 
             {/* Card 4 — Horizontal Moulding */}
             <div className="project-card">
-              <span className="bg-icon">&#10145;&#65039;</span>
+              <span className="bg-icon"><FaArrowRight /></span>
               <div className="project-tag">Horizontal Moulding</div>
               <h3>Horizontal Injection Moulding</h3>
               <p>WELL.TECH 10oz, GOLDSTAR 4oz &amp; DOCTORBOY 2oz — high-speed machines for efficient, high-volume plastic component production.</p>
@@ -127,7 +129,7 @@ export default function InjectionBlowMoulds() {
 
             {/* Card 5 — Pharma / Food & Process */}
             <div className="project-card">
-              <span className="bg-icon">&#128138;</span>
+              <span className="bg-icon"><FaCapsules /></span>
               <div className="project-tag">Pharma / Food &amp; Process</div>
               <h3>Pharma / Food &amp; Process Industry</h3>
               <p>Precision moulded components under strict hygiene standards — FDA-compliant materials, pharmaceutical dispensers, hygienic fittings, and cleanroom-compatible finishes.</p>

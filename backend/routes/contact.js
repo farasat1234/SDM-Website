@@ -17,7 +17,7 @@ router.post('/', upload.single('attachment'), async (req, res) => {
     res.json({ success: true, message: 'Enquiry sent successfully.' });
   } catch (err) {
     console.error('Contact email error:', err.message);
-    res.status(500).json({ error: 'Failed to send enquiry. Please try again or call 0331-2134341.' });
+    res.status(500).json({ error: 'Failed to send enquiry. Please try again or call 0333-5499004.' });
   }
 });
 

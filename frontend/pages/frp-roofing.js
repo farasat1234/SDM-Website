@@ -5,9 +5,9 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 const images = [
-  { src: '/ourprojects/Roofing/J&P Coats-1.png', caption: 'J&P Coats Roofing - View 1' },
-  { src: '/ourprojects/Roofing/J&P Coats-2.png', caption: 'J&P Coats Roofing - View 2' },
-  { src: '/ourprojects/Roofing/J&P Coats-3.png', caption: 'J&P Coats Roofing - View 3' },
+  { src: '/OurProjects/Roofing/J&P Coats-1.png', caption: 'J&P Coats Roofing - View 1' },
+  { src: '/OurProjects/Roofing/J&P Coats-2.png', caption: 'J&P Coats Roofing - View 2' },
+  { src: '/OurProjects/Roofing/J&P Coats-3.png', caption: 'J&P Coats Roofing - View 3' },
 ];
 
 export default function FrpRoofing() {
@@ -25,7 +25,12 @@ export default function FrpRoofing() {
 
   return (
     <>
-      <Head><title>FRP Roof Fabrications - SDM</title><link rel="icon" href="/SDM-LOGO-white.jpg" /></Head>
+      <Head>
+        <title>FRP Roof Fabrications - SDM</title>
+        <meta name="description" content="FRP roof fabrication for industrial and commercial applications, engineered for weather resistance and long-term durability." />
+        <meta name="keywords" content="FRP roofing Karachi, fiberglass roof fabrication Pakistan, industrial FRP roofing, GRP roof panels, weatherproof composite roofing Karachi" />
+        <link rel="icon" href="/SDM-LOGO-white.jpg" />
+      </Head>
       <Navbar />
       <div className="bf-hero">
         <div className="bf-hero-overlay" />
