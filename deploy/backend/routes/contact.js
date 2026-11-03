@@ -12,6 +12,8 @@ router.post('/', upload.single('attachment'), async (req, res) => {
     return res.status(400).json({ error: 'Name, email, and service are required.' });
   }
 
+  console.log('Contact submission — attachment received:', req.file ? `${req.file.originalname} (${req.file.size} bytes)` : 'none');
+
   try {
     await sendContactEmail({ name, company, email, phone, service, details, attachment: req.file || null });
     res.json({ success: true, message: 'Enquiry sent successfully.' });

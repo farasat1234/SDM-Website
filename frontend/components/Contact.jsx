@@ -44,7 +44,7 @@ export default function Contact() {
         <div className="contact-details">
           <div className="contact-item">
             <div className="contact-icon"><FaLocationDot /></div>
-            <div><h5>Address</h5><p>C-47, SITE, Super Highway, Karachi, Pakistan</p></div>
+            <div><h5>Address</h5><p><a href="https://www.google.com/maps/search/?api=1&query=C-47%2C+SITE%2C+Super+Highway%2C+Karachi%2C+Pakistan" target="_blank" rel="noopener noreferrer">C-47, SITE, Super Highway, Karachi, Pakistan</a></p></div>
           </div>
           <div className="contact-item">
             <div className="contact-icon"><FaPhone /></div>

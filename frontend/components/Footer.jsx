@@ -41,8 +41,17 @@ export default function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&#169; 2026 System Dies and Mould (SDM). All rights reserved. | C-47, SITE, Super Highway, Karachi</p>
-        <p>Made with <span>&#9632;</span> in Karachi, Pakistan</p>
+        <p>
+          &#169; 2026 System Dies and Mould (SDM). All rights reserved. |{' '}
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=C-47%2C+SITE%2C+Super+Highway%2C+Karachi%2C+Pakistan"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            C-47, SITE, Super Highway, Karachi
+          </a>
+        </p>
+        <p>Made by SDMDev in Karachi Pakistan</p>
       </div>
     </footer>
   );

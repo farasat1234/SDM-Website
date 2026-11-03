@@ -23,10 +23,13 @@ export default function ChatBot() {
     const text = input.trim();
     if (!text) return;
     setInput('');
+    const history = messages
+      .filter((m) => m.from === 'user' || m.from === 'bot')
+      .map((m) => ({ role: m.from === 'user' ? 'user' : 'assistant', content: m.text }));
     setMessages((prev) => [...prev, { from: 'user', text }]);
     setTyping(true);
     try {
-      const { data } = await axios.post(`${BACKEND}/api/chat`, { message: text });
+      const { data } = await axios.post(`${BACKEND}/api/chat`, { message: text, history });
       setMessages((prev) => [...prev, { from: 'bot', text: data.reply }]);
     } catch {
       setMessages((prev) => [...prev, { from: 'bot', text: 'Sorry, I could not connect. Please call us at 0333-5499004.' }]);
